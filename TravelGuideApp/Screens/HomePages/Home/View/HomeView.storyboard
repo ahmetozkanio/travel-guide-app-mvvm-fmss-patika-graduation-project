@@ -37,11 +37,11 @@
             </objects>
             <point key="canvasLocation" x="1828.985507246377" y="63.616071428571423"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ycD-vv-8U2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HlU-7h-fRO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kUC-E1-QKO"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectHomeIcon" selectedImage="selectHomeIcon" id="kUC-E1-QKO"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A4I-PC-SEd">
@@ -59,6 +59,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="selectHomeIcon" width="68" height="48"/>
+        <image name="unselectHomeIcon" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

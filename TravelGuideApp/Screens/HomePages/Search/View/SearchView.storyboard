@@ -37,11 +37,11 @@
             </objects>
             <point key="canvasLocation" x="910.14492753623199" y="63.616071428571423"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ciA-aD-ZQi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y8d-V0-gvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kLg-bm-5MO"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectSearchIcon" selectedImage="selectSearchIcon" id="kLg-bm-5MO"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wS1-R2-Wf3">
@@ -55,10 +55,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9K-ah-YU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="63.616071428571423"/>
+            <point key="canvasLocation" x="-33" y="64"/>
         </scene>
     </scenes>
     <resources>
+        <image name="selectSearchIcon" width="68" height="48"/>
+        <image name="unselectSearchIcon" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

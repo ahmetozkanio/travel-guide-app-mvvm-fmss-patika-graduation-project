@@ -37,11 +37,11 @@
             </objects>
             <point key="canvasLocation" x="910.14492753623199" y="63.616071428571423"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="bK2-0H-Pt1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CA0-MC-tkh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="V6w-Ff-I3e"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectBookmarksIcon" selectedImage="selectBookmarksIcon" id="V6w-Ff-I3e"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3q8-xM-7Vs">
@@ -59,6 +59,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="selectBookmarksIcon" width="27" height="27"/>
+        <image name="unselectBookmarksIcon" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
