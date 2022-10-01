@@ -8,30 +8,117 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SearchViewController" customModule="TravelGuideApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhK-A8-7FC">
-                                <rect key="frame" x="0.0" y="138" width="414" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-Gt-Ivf">
+                                <rect key="frame" x="16" y="140" width="382" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8x8-vm-sko">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-5C-e41">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-p9-tuU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="37"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
+                                                        <state key="normal" title="Hotels" image="hotelChecked">
+                                                            <color key="titleColor" red="0.91859847309999998" green="0.26912158730000002" blue="0.37343013289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-rn-dyn">
+                                                        <rect key="frame" x="0.0" y="37" width="96" height="3"/>
+                                                        <color key="backgroundColor" red="0.91859847309999998" green="0.26912158730000002" blue="0.37343013289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="3" id="qEI-rF-4qe"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="M3p-lU-Nzs"/>
+                                                    <constraint firstAttribute="width" constant="96" id="mSO-Km-Nim"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ZF-eq-pkX">
+                                                <rect key="frame" x="96" y="0.0" width="3" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="3" id="mH8-9l-vMn"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-fp-IYd">
+                                                <rect key="frame" x="99" y="0.0" width="109" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8a-sL-9Oa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="37"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
+                                                        <state key="normal" title="Flights" image="planeUnchecked">
+                                                            <color key="titleColor" red="0.75981837510000005" green="0.77215451000000002" blue="0.83817166089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRs-rf-mUr">
+                                                        <rect key="frame" x="0.0" y="37" width="109" height="3"/>
+                                                        <color key="backgroundColor" red="0.75981837510000005" green="0.77215451000000002" blue="0.83817166089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="3" id="wK6-kM-NLf"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="109" id="460-g9-4Jy"/>
+                                                    <constraint firstAttribute="height" constant="40" id="M5z-AW-WHS"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8x8-vm-sko" secondAttribute="bottom" id="6dh-e4-oe3"/>
+                                    <constraint firstItem="8x8-vm-sko" firstAttribute="leading" secondItem="UFR-Gt-Ivf" secondAttribute="leading" id="xqB-fZ-O82"/>
+                                    <constraint firstItem="8x8-vm-sko" firstAttribute="top" secondItem="UFR-Gt-Ivf" secondAttribute="top" id="zW6-48-T7z"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Where next?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-qy-0qB">
+                                <rect key="frame" x="16" y="204" width="382" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="X7I-U8-X1Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="56P-x5-TSl">
+                                <rect key="frame" x="0.0" y="256" width="414" height="557"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rhK-A8-7FC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZRK-bt-hee"/>
-                            <constraint firstItem="rhK-A8-7FC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="dv4-Mj-2lv"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rhK-A8-7FC" secondAttribute="trailing" id="ljI-5v-HV7"/>
+                            <constraint firstItem="ibP-qy-0qB" firstAttribute="top" secondItem="UFR-Gt-Ivf" secondAttribute="bottom" constant="24" id="0Jf-fr-OJe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="56P-x5-TSl" secondAttribute="bottom" id="5It-MX-NJ5"/>
+                            <constraint firstItem="56P-x5-TSl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FT2-vD-J0o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UFR-Gt-Ivf" secondAttribute="trailing" constant="16" id="HBE-PV-YzI"/>
+                            <constraint firstItem="ibP-qy-0qB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ruq-ub-X7t"/>
+                            <constraint firstItem="UFR-Gt-Ivf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Vwm-NF-pel"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="56P-x5-TSl" secondAttribute="trailing" id="bTb-Pm-hhk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ibP-qy-0qB" secondAttribute="trailing" constant="16" id="huB-c7-YUR"/>
+                            <constraint firstItem="56P-x5-TSl" firstAttribute="top" secondItem="ibP-qy-0qB" secondAttribute="bottom" id="kHl-5r-gUb"/>
+                            <constraint firstItem="UFR-Gt-Ivf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="u2K-lk-ImD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rIF-Vw-fCm"/>
+                    <navigationItem key="navigationItem" title="Search" id="rIF-Vw-fCm"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="ibP-qy-0qB" id="5FH-rh-aKK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,9 +131,12 @@
                     <tabBarItem key="tabBarItem" title="" image="unselectSearchIcon" selectedImage="selectSearchIcon" id="kLg-bm-5MO"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wS1-R2-Wf3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wS1-R2-Wf3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -59,6 +149,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hotelChecked" width="24" height="24"/>
+        <image name="planeUnchecked" width="24" height="24"/>
         <image name="selectSearchIcon" width="68" height="48"/>
         <image name="unselectSearchIcon" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">

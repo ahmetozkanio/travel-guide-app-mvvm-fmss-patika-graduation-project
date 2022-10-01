@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */; };
+		4818DDD528E7030A00A0F33F /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */; };
+		4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD628E744D400A0F33F /* HomeModel.swift */; };
+		4818DDD928E744E300A0F33F /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD828E744E300A0F33F /* HomeService.swift */; };
+		4818DDDB28E744FA00A0F33F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDDA28E744FA00A0F33F /* HomeViewModel.swift */; };
+		4818DDDE28E7455700A0F33F /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDDD28E7455700A0F33F /* ServiceManager.swift */; };
+		4818DDE128E781CC00A0F33F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4818DDE028E781CC00A0F33F /* Alamofire */; };
+		4818DDE728E78D5D00A0F33F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDE628E78D5D00A0F33F /* ListViewController.swift */; };
+		4818DDEE28E78E8400A0F33F /* GlobalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDEC28E78E8400A0F33F /* GlobalTableViewCell.swift */; };
+		4818DDEF28E78E8400A0F33F /* GlobalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4818DDED28E78E8400A0F33F /* GlobalTableViewCell.xib */; };
 		4827613928E30FC300DFD0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827613828E30FC300DFD0EC /* AppDelegate.swift */; };
 		4827613B28E30FC300DFD0EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827613A28E30FC300DFD0EC /* SceneDelegate.swift */; };
 		4827614328E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4827614128E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld */; };
@@ -20,9 +30,19 @@
 		4827617028E321B100DFD0EC /* BookmarksView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4827616F28E321B100DFD0EC /* BookmarksView.storyboard */; };
 		4827617228E321F400DFD0EC /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4827617128E321F400DFD0EC /* SearchView.storyboard */; };
 		4827617428E3221300DFD0EC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827617328E3221300DFD0EC /* SearchViewController.swift */; };
+		48A3EC9228E8772F000AFB4C /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3EC9128E8772F000AFB4C /* ListView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
+		4818DDD628E744D400A0F33F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		4818DDD828E744E300A0F33F /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		4818DDDA28E744FA00A0F33F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4818DDDD28E7455700A0F33F /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		4818DDE628E78D5D00A0F33F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4818DDEC28E78E8400A0F33F /* GlobalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTableViewCell.swift; sourceTree = "<group>"; };
+		4818DDED28E78E8400A0F33F /* GlobalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalTableViewCell.xib; sourceTree = "<group>"; };
 		4827613528E30FC300DFD0EC /* TravelGuideApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelGuideApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4827613828E30FC300DFD0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4827613A28E30FC300DFD0EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +58,7 @@
 		4827616F28E321B100DFD0EC /* BookmarksView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarksView.storyboard; sourceTree = "<group>"; };
 		4827617128E321F400DFD0EC /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
 		4827617328E3221300DFD0EC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		48A3EC9128E8772F000AFB4C /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +66,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4818DDE128E781CC00A0F33F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4818DDD128E702C900A0F33F /* ArticleCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */,
+				4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */,
+			);
+			path = ArticleCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4818DDDC28E7454300A0F33F /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDDD28E7455700A0F33F /* ServiceManager.swift */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		4818DDE228E78CE200A0F33F /* ListPage */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDE528E78D1300A0F33F /* Model */,
+				4818DDE428E78D0B00A0F33F /* View */,
+				4818DDE328E78CFE00A0F33F /* ViewModel */,
+			);
+			path = ListPage;
+			sourceTree = "<group>";
+		};
+		4818DDE328E78CFE00A0F33F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4818DDE428E78D0B00A0F33F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDE628E78D5D00A0F33F /* ListViewController.swift */,
+				48A3EC9128E8772F000AFB4C /* ListView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4818DDE528E78D1300A0F33F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4818DDEA28E78DBB00A0F33F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDEB28E78DEC00A0F33F /* GlobalTableViewCell */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		4818DDEB28E78DEC00A0F33F /* GlobalTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDEC28E78E8400A0F33F /* GlobalTableViewCell.swift */,
+				4818DDED28E78E8400A0F33F /* GlobalTableViewCell.xib */,
+			);
+			path = GlobalTableViewCell;
+			sourceTree = "<group>";
+		};
 		4827612C28E30FC300DFD0EC = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +188,7 @@
 		4827615228E313CD00DFD0EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDDC28E7454300A0F33F /* ServiceManager */,
 				4827617528E3234A00DFD0EC /* Launch */,
 				4827615728E31C4900DFD0EC /* HomePages */,
 			);
@@ -117,6 +207,8 @@
 		4827615728E31C4900DFD0EC /* HomePages */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDEA28E78DBB00A0F33F /* Global */,
+				4818DDE228E78CE200A0F33F /* ListPage */,
 				4827616228E31FCC00DFD0EC /* Home */,
 				4827616628E3210600DFD0EC /* Bookmarks */,
 				4827616528E320FD00DFD0EC /* Search */,
@@ -128,6 +220,7 @@
 		4827615828E31CC000DFD0EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDD128E702C900A0F33F /* ArticleCollectionViewCell */,
 				4827615C28E31CFD00DFD0EC /* HomeViewController.swift */,
 				4827616028E31DB900DFD0EC /* HomeView.storyboard */,
 			);
@@ -137,6 +230,7 @@
 		4827615928E31CC600DFD0EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDDA28E744FA00A0F33F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +238,7 @@
 		4827615A28E31CCF00DFD0EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDD628E744D400A0F33F /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +246,7 @@
 		4827615B28E31CD700DFD0EC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4818DDD828E744E300A0F33F /* HomeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -256,6 +352,9 @@
 			dependencies = (
 			);
 			name = TravelGuideApp;
+			packageProductDependencies = (
+				4818DDE028E781CC00A0F33F /* Alamofire */,
+			);
 			productName = TravelGuideApp;
 			productReference = 4827613528E30FC300DFD0EC /* TravelGuideApp.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +383,9 @@
 				Base,
 			);
 			mainGroup = 4827612C28E30FC300DFD0EC;
+			packageReferences = (
+				4818DDDF28E781CC00A0F33F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4827613628E30FC300DFD0EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,7 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4827616128E31DB900DFD0EC /* HomeView.storyboard in Resources */,
+				4818DDEF28E78E8400A0F33F /* GlobalTableViewCell.xib in Resources */,
+				4818DDD528E7030A00A0F33F /* ArticleCollectionViewCell.xib in Resources */,
 				4827617228E321F400DFD0EC /* SearchView.storyboard in Resources */,
+				48A3EC9228E8772F000AFB4C /* ListView.storyboard in Resources */,
 				4827614828E30FC700DFD0EC /* LaunchScreen.storyboard in Resources */,
 				4827614528E30FC700DFD0EC /* Assets.xcassets in Resources */,
 				4827616428E3205B00DFD0EC /* TabBarView.storyboard in Resources */,
@@ -314,13 +419,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4818DDD928E744E300A0F33F /* HomeService.swift in Sources */,
 				4827616E28E321A000DFD0EC /* BookmarksViewController.swift in Sources */,
+				4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */,
 				4827617428E3221300DFD0EC /* SearchViewController.swift in Sources */,
 				4827615E28E31CFD00DFD0EC /* HomeViewController.swift in Sources */,
 				4827615628E31C3400DFD0EC /* TabBarViewController.swift in Sources */,
 				4827614328E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld in Sources */,
+				4818DDDB28E744FA00A0F33F /* HomeViewModel.swift in Sources */,
+				4818DDEE28E78E8400A0F33F /* GlobalTableViewCell.swift in Sources */,
+				4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */,
 				4827613928E30FC300DFD0EC /* AppDelegate.swift in Sources */,
 				4827613B28E30FC300DFD0EC /* SceneDelegate.swift in Sources */,
+				4818DDE728E78D5D00A0F33F /* ListViewController.swift in Sources */,
+				4818DDDE28E7455700A0F33F /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +646,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4818DDDF28E781CC00A0F33F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4818DDE028E781CC00A0F33F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4818DDDF28E781CC00A0F33F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4827614128E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld */ = {
