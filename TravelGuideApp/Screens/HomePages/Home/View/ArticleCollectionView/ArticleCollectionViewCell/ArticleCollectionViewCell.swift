@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ArticleCollectionViewCell: UICollectionViewCell {
 
@@ -24,6 +25,14 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func addBookmarkButtonClicked(_ sender: Any) {
+    }
+}
+
+extension ArticleCollectionViewCell{
+    func configureArticleCellData(item: ArticleCellModel){
+        topTitleLabel.text = item.title
+        titleLabel.text = item.mainTitle
+        imageView.kf.setImage(with:  URL(string: item.image!))
     }
 }
 

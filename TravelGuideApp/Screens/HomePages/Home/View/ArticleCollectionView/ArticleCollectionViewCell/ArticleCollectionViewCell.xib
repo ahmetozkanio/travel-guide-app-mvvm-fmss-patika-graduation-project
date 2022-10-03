@@ -24,10 +24,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="243" height="191"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hac-Al-WA1">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="127"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeTopBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N07-GI-Wts">
-                                                <rect key="frame" x="0.0" y="0.0" width="243" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="243" height="127"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMT-Fl-3Au">
                                                 <rect key="frame" x="195" y="16" width="32" height="32"/>
@@ -47,7 +47,6 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="iMT-Fl-3Au" firstAttribute="top" secondItem="Hac-Al-WA1" secondAttribute="top" constant="16" id="8K5-gh-qKs"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="ET7-zG-i8i"/>
                                             <constraint firstItem="N07-GI-Wts" firstAttribute="leading" secondItem="Hac-Al-WA1" secondAttribute="leading" id="OLQ-h9-yNV"/>
                                             <constraint firstAttribute="trailing" secondItem="iMT-Fl-3Au" secondAttribute="trailing" constant="16" id="Yb5-qU-Xv7"/>
                                             <constraint firstAttribute="bottom" secondItem="N07-GI-Wts" secondAttribute="bottom" id="eFH-6r-4Z9"/>
@@ -56,7 +55,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dTC-uF-kcW">
-                                        <rect key="frame" x="0.0" y="120" width="243" height="71"/>
+                                        <rect key="frame" x="0.0" y="127" width="243" height="64"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-by-QiO">
                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="21"/>
@@ -80,10 +79,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-SP-j3d">
-                                                <rect key="frame" x="0.0" y="21" width="243" height="50"/>
+                                                <rect key="frame" x="0.0" y="21" width="243" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label  Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toh-o3-Cli">
-                                                        <rect key="frame" x="16" y="0.0" width="211" height="50"/>
+                                                        <rect key="frame" x="16" y="0.0" width="211" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="ryF-FQ-fb7"/>
                                                         </constraints>
@@ -103,6 +102,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="dTC-uF-kcW" firstAttribute="top" secondItem="4eP-D1-pIx" secondAttribute="top" constant="127" id="O6f-Gt-PYV"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
