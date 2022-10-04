@@ -21,6 +21,7 @@
 		48146B7C28EC994600C8400C /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7B28EC994600C8400C /* DetailEntity.swift */; };
 		48146B7E28EC9D3F00C8400C /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7D28EC9D3F00C8400C /* FlightModel.swift */; };
 		48146B8028EC9D4C00C8400C /* FlightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7F28EC9D4C00C8400C /* FlightEntity.swift */; };
+		48146B8228ECAECD00C8400C /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B8128ECAECD00C8400C /* FlightViewModel.swift */; };
 		4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */; };
 		4818DDD528E7030A00A0F33F /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */; };
 		4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD628E744D400A0F33F /* HomeModel.swift */; };
@@ -64,6 +65,7 @@
 		48146B7B28EC994600C8400C /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		48146B7D28EC9D3F00C8400C /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		48146B7F28EC9D4C00C8400C /* FlightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightEntity.swift; sourceTree = "<group>"; };
+		48146B8128ECAECD00C8400C /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 		4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		4818DDD628E744D400A0F33F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		48146B6628EC175500C8400C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				48146B8128ECAECD00C8400C /* FlightViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				48146B8028EC9D4C00C8400C /* FlightEntity.swift in Sources */,
 				4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */,
 				4875F94028E9FFFF00370A82 /* ArticleCellEntity.swift in Sources */,
+				48146B8228ECAECD00C8400C /* FlightViewModel.swift in Sources */,
 				4827617428E3221300DFD0EC /* SearchViewController.swift in Sources */,
 				48146B6E28EC186300C8400C /* HotelEntity.swift in Sources */,
 				48146B7628EC450F00C8400C /* ListEntity.swift in Sources */,

@@ -33,6 +33,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController{
     func configure(){
         if item != nil {
+           
             titleLabel.text = item?.titleLabel
             mainTitleLabel.text = item?.mainTitleLabel
             descriptionLabel.text = item?.descriptionLabel

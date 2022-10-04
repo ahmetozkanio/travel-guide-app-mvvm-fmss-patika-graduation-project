@@ -27,7 +27,7 @@ extension Constant{
         }
     }
     enum FlightServiceEndPoint: String{
-        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/hotel-json-api.json"
+        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/flight-json-api.json"
         static func flightGetEndPoint() -> String{
             "\(BASE_URL.rawValue)"
         }

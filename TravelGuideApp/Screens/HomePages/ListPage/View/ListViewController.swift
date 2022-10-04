@@ -46,7 +46,8 @@ class ListViewController: UIViewController {
 
 extension ListViewController{
   func initial(){
-        listViewModel.initialListModel(initialComponent)
+      
+      titleLabel.text =   listViewModel.initialListModel(initialComponent)
     }
 }
 extension ListViewController{

@@ -8,6 +8,7 @@
 import Foundation
 
 struct ListEntityGlobalTableViewCell{
+    var topBarTitle: String?
     var image: String?
     var title: String?
     var subTitle: String?
