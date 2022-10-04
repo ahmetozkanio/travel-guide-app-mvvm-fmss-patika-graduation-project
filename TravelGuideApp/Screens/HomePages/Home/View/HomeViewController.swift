@@ -25,19 +25,20 @@ final class HomeViewController: UIViewController {
     }
     // MARK: - BUTTON CLICK
     @IBAction func flightButtonClicked(_ sender: Any) {
-        goToListViewController()
+        goToListViewController(Constant.ListViewControllerInitialComponent.flights)
     }
     @IBAction func hotelButtonClicked(_ sender: Any) {
-        goToListViewController()
+        goToListViewController(Constant.ListViewControllerInitialComponent.hotels)
     }
 }
 
 extension HomeViewController{
-    private func goToListViewController(){
+    private func goToListViewController(_ initialComponent: Constant.ListViewControllerInitialComponent){
         let storyboard = UIStoryboard(name: "ListView", bundle: nil)
         let controller  = storyboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
+        controller.initialComponent = initialComponent
         self.present(controller, animated: true, completion: nil)
     }
     func goToDetailViewController(_ item: ArticleElement?){
@@ -46,7 +47,7 @@ extension HomeViewController{
         let controller  = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
-        controller.item = item
+        controller.item = DetailEntity(imageView: item?.urlToImage, titleLabel: item?.author, mainTitleLabel: item?.title, descriptionLabel: item?.description)
         self.present(controller, animated: true, completion: nil)
         
     }

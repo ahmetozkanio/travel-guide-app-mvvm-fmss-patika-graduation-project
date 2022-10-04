@@ -32,9 +32,7 @@ final class HomeViewModel {
 
 extension HomeViewModel{
     func didClickItem(at item: Int) -> ArticleElement? {
-        
         return articleItems[item]
-        
     }
     
 }

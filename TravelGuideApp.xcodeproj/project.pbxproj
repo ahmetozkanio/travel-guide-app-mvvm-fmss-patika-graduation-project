@@ -11,6 +11,16 @@
 		480891D028EAD8AD000D7366 /* ArticleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480891CF28EAD8AD000D7366 /* ArticleCollectionView.swift */; };
 		480891D328EADA9D000D7366 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480891D228EADA9D000D7366 /* DetailViewController.swift */; };
 		480891D528EADABE000D7366 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480891D428EADABE000D7366 /* DetailView.storyboard */; };
+		48146B6C28EC185100C8400C /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B6B28EC185100C8400C /* HotelModel.swift */; };
+		48146B6E28EC186300C8400C /* HotelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B6D28EC186300C8400C /* HotelEntity.swift */; };
+		48146B7028EC19B300C8400C /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B6F28EC19B300C8400C /* HotelViewModel.swift */; };
+		48146B7228EC1D3000C8400C /* ViewControllerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7128EC1D3000C8400C /* ViewControllerConstant.swift */; };
+		48146B7428EC1EF800C8400C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7328EC1EF800C8400C /* ListViewModel.swift */; };
+		48146B7628EC450F00C8400C /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7528EC450F00C8400C /* ListEntity.swift */; };
+		48146B7928EC970200C8400C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7828EC970200C8400C /* DetailViewModel.swift */; };
+		48146B7C28EC994600C8400C /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7B28EC994600C8400C /* DetailEntity.swift */; };
+		48146B7E28EC9D3F00C8400C /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7D28EC9D3F00C8400C /* FlightModel.swift */; };
+		48146B8028EC9D4C00C8400C /* FlightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48146B7F28EC9D4C00C8400C /* FlightEntity.swift */; };
 		4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */; };
 		4818DDD528E7030A00A0F33F /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */; };
 		4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818DDD628E744D400A0F33F /* HomeModel.swift */; };
@@ -44,6 +54,16 @@
 		480891CF28EAD8AD000D7366 /* ArticleCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionView.swift; sourceTree = "<group>"; };
 		480891D228EADA9D000D7366 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		480891D428EADABE000D7366 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		48146B6B28EC185100C8400C /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		48146B6D28EC186300C8400C /* HotelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelEntity.swift; sourceTree = "<group>"; };
+		48146B6F28EC19B300C8400C /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
+		48146B7128EC1D3000C8400C /* ViewControllerConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerConstant.swift; sourceTree = "<group>"; };
+		48146B7328EC1EF800C8400C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		48146B7528EC450F00C8400C /* ListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEntity.swift; sourceTree = "<group>"; };
+		48146B7828EC970200C8400C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		48146B7B28EC994600C8400C /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
+		48146B7D28EC9D3F00C8400C /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		48146B7F28EC9D4C00C8400C /* FlightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightEntity.swift; sourceTree = "<group>"; };
 		4818DDD228E7030A00A0F33F /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		4818DDD328E7030A00A0F33F /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		4818DDD628E744D400A0F33F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -99,6 +119,8 @@
 		480891D128EADA75000D7366 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				48146B7A28EC993700C8400C /* Model */,
+				48146B7728EC96D800C8400C /* ViewModel */,
 				480891D628EADACD000D7366 /* View */,
 			);
 			path = DetailPage;
@@ -111,6 +133,64 @@
 				480891D428EADABE000D7366 /* DetailView.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		48146B6428EC171B00C8400C /* Hotels */ = {
+			isa = PBXGroup;
+			children = (
+				48146B6A28EC17B900C8400C /* Model */,
+				48146B6828EC17A500C8400C /* ViewModel */,
+			);
+			path = Hotels;
+			sourceTree = "<group>";
+		};
+		48146B6628EC175500C8400C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48146B6728EC175C00C8400C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48146B7D28EC9D3F00C8400C /* FlightModel.swift */,
+				48146B7F28EC9D4C00C8400C /* FlightEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48146B6828EC17A500C8400C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48146B6F28EC19B300C8400C /* HotelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48146B6A28EC17B900C8400C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48146B6B28EC185100C8400C /* HotelModel.swift */,
+				48146B6D28EC186300C8400C /* HotelEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48146B7728EC96D800C8400C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48146B7828EC970200C8400C /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48146B7A28EC993700C8400C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48146B7B28EC994600C8400C /* DetailEntity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4818DDD128E702C900A0F33F /* ArticleCollectionViewCell */ = {
@@ -143,6 +223,7 @@
 		4818DDE328E78CFE00A0F33F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				48146B7328EC1EF800C8400C /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,6 +240,7 @@
 		4818DDE528E78D1300A0F33F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				48146B7528EC450F00C8400C /* ListEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +330,8 @@
 		4827615728E31C4900DFD0EC /* HomePages */ = {
 			isa = PBXGroup;
 			children = (
-				48F7233828EB65B30098C7D8 /* New Group */,
+				48146B6428EC171B00C8400C /* Hotels */,
+				48F7233828EB65B30098C7D8 /* Flights */,
 				480891D128EADA75000D7366 /* DetailPage */,
 				4818DDEA28E78DBB00A0F33F /* Global */,
 				4818DDE228E78CE200A0F33F /* ListPage */,
@@ -385,15 +468,18 @@
 			children = (
 				4875F94328EA03BD00370A82 /* Constant.swift */,
 				4875F94528EA03CF00370A82 /* ServiceConstant.swift */,
+				48146B7128EC1D3000C8400C /* ViewControllerConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		48F7233828EB65B30098C7D8 /* New Group */ = {
+		48F7233828EB65B30098C7D8 /* Flights */ = {
 			isa = PBXGroup;
 			children = (
+				48146B6728EC175C00C8400C /* Model */,
+				48146B6628EC175500C8400C /* ViewModel */,
 			);
-			path = "New Group";
+			path = Flights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,25 +568,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48146B6C28EC185100C8400C /* HotelModel.swift in Sources */,
 				4875F94428EA03BD00370A82 /* Constant.swift in Sources */,
 				4827616E28E321A000DFD0EC /* BookmarksViewController.swift in Sources */,
+				48146B8028EC9D4C00C8400C /* FlightEntity.swift in Sources */,
 				4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */,
 				4875F94028E9FFFF00370A82 /* ArticleCellEntity.swift in Sources */,
 				4827617428E3221300DFD0EC /* SearchViewController.swift in Sources */,
+				48146B6E28EC186300C8400C /* HotelEntity.swift in Sources */,
+				48146B7628EC450F00C8400C /* ListEntity.swift in Sources */,
 				4875F93E28E9FFC900370A82 /* ArticleEntity.swift in Sources */,
+				48146B7928EC970200C8400C /* DetailViewModel.swift in Sources */,
 				4827615E28E31CFD00DFD0EC /* HomeViewController.swift in Sources */,
+				48146B7028EC19B300C8400C /* HotelViewModel.swift in Sources */,
 				4827615628E31C3400DFD0EC /* TabBarViewController.swift in Sources */,
 				4827614328E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld in Sources */,
 				4818DDDB28E744FA00A0F33F /* HomeViewModel.swift in Sources */,
 				480891D328EADA9D000D7366 /* DetailViewController.swift in Sources */,
+				48146B7C28EC994600C8400C /* DetailEntity.swift in Sources */,
+				48146B7428EC1EF800C8400C /* ListViewModel.swift in Sources */,
 				4818DDEE28E78E8400A0F33F /* GlobalTableViewCell.swift in Sources */,
 				4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */,
 				4827613928E30FC300DFD0EC /* AppDelegate.swift in Sources */,
 				4827613B28E30FC300DFD0EC /* SceneDelegate.swift in Sources */,
 				4818DDE728E78D5D00A0F33F /* ListViewController.swift in Sources */,
 				4818DDDE28E7455700A0F33F /* ServiceManager.swift in Sources */,
+				48146B7228EC1D3000C8400C /* ViewControllerConstant.swift in Sources */,
 				4875F94628EA03CF00370A82 /* ServiceConstant.swift in Sources */,
 				480891D028EAD8AD000D7366 /* ArticleCollectionView.swift in Sources */,
+				48146B7E28EC9D3F00C8400C /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

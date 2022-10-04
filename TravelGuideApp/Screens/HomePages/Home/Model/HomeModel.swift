@@ -12,7 +12,7 @@ protocol HomeModelProtocol: AnyObject{
 final class HomeModel: HomeModelProtocol{
    
     func fetchArticles(onSuccess: @escaping (Article?) -> (), onError: @escaping (String?) -> ()) {
-        ServiceManager.shared.fetch(path: Constant.ArticleServiceEndPoint.articleEndPoint()) { (response: Article) in
+        ServiceManager.shared.fetch(path: Constant.ArticleServiceEndPoint.articleGetEndPoint()) { (response: Article) in
             onSuccess(response)
         } onError: { error in
            onError(error)

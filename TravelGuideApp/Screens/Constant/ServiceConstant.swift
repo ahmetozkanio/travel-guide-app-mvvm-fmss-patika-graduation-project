@@ -16,8 +16,20 @@ extension Constant{
         case BASE_URL = "https://newsapi.org/v2/top-headlines?sources=techcrunch"
         case API_KEY = "&apiKey=54c017307b434df1a0b757b75c17bfa4"
         
-        static func articleEndPoint() -> String{
+        static func articleGetEndPoint() -> String{
             "\(BASE_URL.rawValue)\(API_KEY.rawValue)"
+        }
+    }
+    enum HotelServiceEndPoint: String{
+        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/hotel-json-api.json"     
+        static func hotelGetEndPoint() -> String{
+            "\(BASE_URL.rawValue)"
+        }
+    }
+    enum FlightServiceEndPoint: String{
+        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/hotel-json-api.json"
+        static func flightGetEndPoint() -> String{
+            "\(BASE_URL.rawValue)"
         }
     }
 }

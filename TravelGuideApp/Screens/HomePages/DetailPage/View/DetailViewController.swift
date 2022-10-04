@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var item: ArticleElement?
+    var item: DetailEntity?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,10 @@ class DetailViewController: UIViewController {
 extension DetailViewController{
     func configure(){
         if item != nil {
-            titleLabel.text = item?.author
-            mainTitleLabel.text = item?.title
-            imageView.kf.setImage(with: URL(string: (item?.urlToImage)!))
+            titleLabel.text = item?.titleLabel
+            mainTitleLabel.text = item?.mainTitleLabel
+            descriptionLabel.text = item?.descriptionLabel
+            imageView.kf.setImage(with: URL(string: (item?.imageView)!))
         }
     }
 }
