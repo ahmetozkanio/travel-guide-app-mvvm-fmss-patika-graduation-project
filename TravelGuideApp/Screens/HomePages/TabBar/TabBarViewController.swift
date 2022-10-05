@@ -39,7 +39,7 @@ private extension TabBarViewController{
     }
     
     private func tabBarTopShadow(){
-        let lineView = UIView(frame: CGRect(x: 0, y: -32, width: tabBar.frame.size.width, height: 24))
+        let lineView = UIView(frame: CGRect(x: 0, y: -24, width: tabBar.frame.size.width, height: 24))
         let gradient = CAGradientLayer()
         gradient.frame = lineView.bounds
         gradient.colors = [UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor,UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0).cgColor]
