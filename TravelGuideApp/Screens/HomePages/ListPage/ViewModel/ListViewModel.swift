@@ -10,12 +10,12 @@ import Foundation
 final class ListViewModel{
     
     private let listViewController: ListViewController = ListViewController()
-
-   
-    lazy var hotelViewModel: HotelViewModel = HotelViewModel()
-    lazy var flightViewModel: FlightViewModel = FlightViewModel()
     
-    var listItems = [Any]()
+    
+    private lazy var hotelViewModel: HotelViewModel = HotelViewModel()
+    private lazy var flightViewModel: FlightViewModel = FlightViewModel()
+    
+    private var listItems = [Any]()
     
     init(){
         hotelViewModel.hotelListItemsDelegate = self
@@ -27,10 +27,10 @@ final class ListViewModel{
     func initialListModel(_ initial: Constant.ListViewControllerInitialComponent ) -> String?{
         switch initial {
         case .hotels:
-             hotels()
+            hotelViewModel.didViewLoad()
             return "Hotels"
         case .flights:
-            flights()
+            flightViewModel.didViewLoad()
             return "Flights"
         case .bookmarks:
             print("bookmarks")
@@ -42,17 +42,6 @@ final class ListViewModel{
 }
 
 extension ListViewModel{
-    func hotels(){
-        hotelViewModel.didViewLoad()
-       
-    }
-    func flights(){
-        flightViewModel.didViewLoad()
-       
-    }
-}
-
-extension ListViewModel{
     func didClickItem(at item: Int,_ initial: Constant.ListViewControllerInitialComponent) -> DetailEntity? {
         switch initial {
         case .hotels:
@@ -60,13 +49,13 @@ extension ListViewModel{
             return DetailEntity(imageView: hotels[item].image, titleLabel:  hotels[item].price, mainTitleLabel:  hotels[item].name, descriptionLabel:  hotels[item].description)
         case .flights:
             let flights: [FlightElement] = listItems as! [FlightElement]
-            return DetailEntity(imageView: flights[item].image, titleLabel: "Flight Number : \(flights[item].flightNumber ?? "")", mainTitleLabel:   "\(flights[item].flightCompany ?? "")  -   \(flights[item].flightTitle ?? "")      ", descriptionLabel:  "Price : \(flights[item].price ?? "") - \(flights[item].day ?? "") -  \(flights[item].departAirport ?? "") -> \(flights[item].arrivalAirport ?? "")")
+            return DetailEntity(imageView: flights[item].image, titleLabel: "Flight Number : \(flights[item].flightNumber ?? "")", mainTitleLabel: "\(flights[item].flightCompany ?? "")  -   \(flights[item].flightTitle ?? "")      ", descriptionLabel:  "Price : \(flights[item].price ?? "") - \(flights[item].day ?? "") -  \(flights[item].departAirport ?? "") -> \(flights[item].arrivalAirport ?? "")")
         case .bookmarks:
             print("bookmarks")
         case .baseDefatult:
             print("baseDefatult")
         }
-       return nil
+        return nil
     }
     
 }
@@ -101,8 +90,8 @@ extension ListViewModel{
         case .baseDefatult:
             print("baseDefatult")
         }
-      
+        
         return nil
-      
+        
     }
 }

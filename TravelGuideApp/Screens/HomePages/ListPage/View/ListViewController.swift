@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    lazy var listViewModel: ListViewModel = ListViewModel()
+    private lazy var listViewModel: ListViewModel = ListViewModel()
     
     var initialComponent = Constant.ListViewControllerInitialComponent.baseDefatult
      
@@ -32,7 +32,7 @@ class ListViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func goToDetailViewController(_ item: DetailEntity?){
+    private func goToDetailViewController(_ item: DetailEntity?){
         
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
         let controller  = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -44,16 +44,15 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController{
+private extension ListViewController{
   func initial(){
       
       titleLabel.text =   listViewModel.initialListModel(initialComponent)
     }
 }
-extension ListViewController{
+private extension ListViewController{
     @objc func listItemsReload() {
         DispatchQueue.main.async {
-            print("Reload Data")
               self.listTableView.reloadData()
         }
     }

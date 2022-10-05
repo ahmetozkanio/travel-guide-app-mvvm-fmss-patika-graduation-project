@@ -15,21 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabBarShadow" translatesAutoresizingMaskIntoConstraints="NO" id="hQh-06-mCA">
-                                <rect key="frame" x="0.0" y="725" width="414" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="Nx0-hQ-j3f"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hQh-06-mCA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PBr-ro-bJx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hQh-06-mCA" secondAttribute="trailing" id="PNG-im-oXd"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hQh-06-mCA" secondAttribute="bottom" id="eTP-y4-O2p"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ILZ-4g-Cu1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -57,7 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabBarShadow" width="391" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

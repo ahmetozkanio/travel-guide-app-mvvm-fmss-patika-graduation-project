@@ -8,7 +8,6 @@
 import Foundation
 
 struct DetailEntity{
- 
     var imageView: String?
     var titleLabel: String?
     var mainTitleLabel: String?

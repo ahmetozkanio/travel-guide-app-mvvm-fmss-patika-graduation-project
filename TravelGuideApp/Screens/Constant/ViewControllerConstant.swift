@@ -16,4 +16,8 @@ extension Constant{
         case flights
         case bookmarks
     }
+    enum SearchModel{
+        case hotels
+        case flights
+    }
 }
