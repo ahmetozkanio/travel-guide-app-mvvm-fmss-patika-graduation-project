@@ -16,3 +16,10 @@ struct HotelElement: Codable {
     let name, description, price, address: String?
     let image: String?
 }
+
+// MARK: - HotelEntity CORE_DATA
+struct HotelCoreDataEntity {
+    let id: Int?
+    let name, hotelDescription, price, address: String?
+    let image: String?
+}

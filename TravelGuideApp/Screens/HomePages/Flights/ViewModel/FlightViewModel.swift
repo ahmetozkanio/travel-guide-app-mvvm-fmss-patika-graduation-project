@@ -23,7 +23,6 @@ final class FlightViewModel{
    // lazy var flightItems: [FlightElement] = []
    
     func didViewLoad(){
-        
         initFlightService()
     }
 }

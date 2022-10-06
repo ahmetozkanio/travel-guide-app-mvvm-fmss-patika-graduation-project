@@ -21,15 +21,17 @@ extension Constant{
         }
     }
     enum HotelServiceEndPoint: String{
-        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/hotel-json-api.json"     
+        case BASE_URL = "https://raw.githubusercontent.com/"
+        case END_URL = "ahmetozkanio/custom-api-public/main/hotel-json-api.json"
         static func hotelGetEndPoint() -> String{
-            "\(BASE_URL.rawValue)"
+            "\(BASE_URL.rawValue)\(END_URL.rawValue)"
         }
     }
     enum FlightServiceEndPoint: String{
-        case BASE_URL = "https://raw.githubusercontent.com/ahmetozkanio/custom-api-public/main/flight-json-api.json"
+        case BASE_URL = "https://raw.githubusercontent.com/"
+        case END_URL = "ahmetozkanio/custom-api-public/main/flight-json-api.json"
         static func flightGetEndPoint() -> String{
-            "\(BASE_URL.rawValue)"
+            "\(BASE_URL.rawValue)\(END_URL.rawValue)"
         }
     }
 }

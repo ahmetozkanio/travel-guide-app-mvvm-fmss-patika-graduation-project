@@ -18,6 +18,5 @@ final class FlightModel: FlightModelProtocol{
            onError(error)
         }
     }
-    
 }
 

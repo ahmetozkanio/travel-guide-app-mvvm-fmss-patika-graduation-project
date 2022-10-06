@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4806FF8A28EF06A100B31A72 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806FF8928EF06A100B31A72 /* CoreDataManager.swift */; };
+		4806FF8C28EF111E00B31A72 /* BookmarksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806FF8B28EF111E00B31A72 /* BookmarksEntity.swift */; };
+		4806FF8E28EF112D00B31A72 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806FF8D28EF112D00B31A72 /* BookmarksModel.swift */; };
+		4806FF9028EF113A00B31A72 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806FF8F28EF113A00B31A72 /* BookmarksViewModel.swift */; };
 		480891CD28EAD6BF000D7366 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 480891CC28EAD6BF000D7366 /* Kingfisher */; };
 		480891D028EAD8AD000D7366 /* ArticleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480891CF28EAD8AD000D7366 /* ArticleCollectionView.swift */; };
 		480891D328EADA9D000D7366 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480891D228EADA9D000D7366 /* DetailViewController.swift */; };
@@ -53,6 +57,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4806FF8928EF06A100B31A72 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4806FF8B28EF111E00B31A72 /* BookmarksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksEntity.swift; sourceTree = "<group>"; };
+		4806FF8D28EF112D00B31A72 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
+		4806FF8F28EF113A00B31A72 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		480891CF28EAD8AD000D7366 /* ArticleCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionView.swift; sourceTree = "<group>"; };
 		480891D228EADA9D000D7366 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		480891D428EADABE000D7366 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
@@ -111,6 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4806FF8828EF068000B31A72 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				4806FF8928EF06A100B31A72 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		4806FF9128EF175200B31A72 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4818DDDC28E7454300A0F33F /* ServiceManager */,
+				4806FF8828EF068000B31A72 /* CoreDataManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		480891CE28EAD880000D7366 /* ArticleCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,8 +340,8 @@
 		4827615228E313CD00DFD0EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4806FF9128EF175200B31A72 /* Manager */,
 				4875F94228EA03A700370A82 /* Constant */,
-				4818DDDC28E7454300A0F33F /* ServiceManager */,
 				4827617528E3234A00DFD0EC /* Launch */,
 				4827615728E31C4900DFD0EC /* HomePages */,
 			);
@@ -408,6 +433,7 @@
 		4827616728E3212700DFD0EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4806FF8F28EF113A00B31A72 /* BookmarksViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -424,6 +450,8 @@
 		4827616928E3213700DFD0EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4806FF8B28EF111E00B31A72 /* BookmarksEntity.swift */,
+				4806FF8D28EF112D00B31A72 /* BookmarksModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,6 +607,7 @@
 				4827616E28E321A000DFD0EC /* BookmarksViewController.swift in Sources */,
 				48146B8028EC9D4C00C8400C /* FlightEntity.swift in Sources */,
 				4818DDD728E744D400A0F33F /* HomeModel.swift in Sources */,
+				4806FF8C28EF111E00B31A72 /* BookmarksEntity.swift in Sources */,
 				4875F94028E9FFFF00370A82 /* ArticleCellEntity.swift in Sources */,
 				48146B8228ECAECD00C8400C /* FlightViewModel.swift in Sources */,
 				4827617428E3221300DFD0EC /* SearchViewController.swift in Sources */,
@@ -588,11 +617,14 @@
 				48146B7928EC970200C8400C /* DetailViewModel.swift in Sources */,
 				4827615E28E31CFD00DFD0EC /* HomeViewController.swift in Sources */,
 				48146B7028EC19B300C8400C /* HotelViewModel.swift in Sources */,
+				4806FF8A28EF06A100B31A72 /* CoreDataManager.swift in Sources */,
 				4827615628E31C3400DFD0EC /* TabBarViewController.swift in Sources */,
 				4827614328E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld in Sources */,
 				4818DDDB28E744FA00A0F33F /* HomeViewModel.swift in Sources */,
 				480891D328EADA9D000D7366 /* DetailViewController.swift in Sources */,
 				48146B7C28EC994600C8400C /* DetailEntity.swift in Sources */,
+				4806FF9028EF113A00B31A72 /* BookmarksViewModel.swift in Sources */,
+				4806FF8E28EF112D00B31A72 /* BookmarksModel.swift in Sources */,
 				48146B7428EC1EF800C8400C /* ListViewModel.swift in Sources */,
 				4818DDEE28E78E8400A0F33F /* GlobalTableViewCell.swift in Sources */,
 				4818DDD428E7030A00A0F33F /* ArticleCollectionViewCell.swift in Sources */,

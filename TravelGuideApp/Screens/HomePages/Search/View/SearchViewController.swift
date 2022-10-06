@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class SearchViewController: UIViewController {
     
     
@@ -34,6 +36,10 @@ class SearchViewController: UIViewController {
         searchUI()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(searchListItemsReload), name: Notification.Name("SearchListItemReloadData"), object: nil)
+    }
+    
     @IBAction func hotelsButtonClick(_ sender: Any) {
         modelType = Constant.SearchModel.hotels
         searchViewModel.initialSearchListModel(modelType)
@@ -47,35 +53,7 @@ class SearchViewController: UIViewController {
         flightsButtonSelected()
         
     }
-    private func hotelsButtonSelected(){
-        flightsButtonUnselected()
-        
-        hotelsButton.setTitleColor(buttonSelectedColor, for: .normal)
-        hotelsButton.setImage(UIImage(named: "hotelChecked"), for: .normal)
-        hotelsButtonLine.isHidden = false
-        
-    
-      
-    }
-    private func hotelsButtonUnselected(){
-        hotelsButton.setTitleColor(buttonUnselectedColor, for: .normal)
-        hotelsButton.setImage(UIImage(named: "hotelUnchecked"), for: .normal)
-        hotelsButtonLine.isHidden = true
-    
-    }
-    private func flightsButtonSelected(){
-        hotelsButtonUnselected()
-    
-        flightsButton.setTitleColor(buttonSelectedColor, for: .normal)
-        flightsButton.setImage(UIImage(named: "planeChecked"), for: .normal)
-        flightsButtonLine.isHidden = false
-    }
-    private func flightsButtonUnselected(){
-        flightsButton.setTitleColor(buttonUnselectedColor, for: .normal)
-        flightsButton.setImage(UIImage(named: "planeUnchecked"), for: .normal)
-        flightsButtonLine.isHidden = true
-    }
-    
+  
     private func goToDetailViewController(_ item: DetailEntity?){
         
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
@@ -138,22 +116,45 @@ extension SearchViewController: UITextFieldDelegate{
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        
+        var searchText  = textField.text!
+        
+        // limit to 3 characters
+        let characterCountLimit = 3
+        
+        let startingLength = searchText.count
+        let lengthToAdd = string.count
+        let lengthToReplace = range.length
+        let newLength = startingLength + lengthToAdd - lengthToReplace
         //input text
-        let searchText  = textField.text! + string
+        print(range.length)
+      
+        // Backspace
+        if range.length == 0{
+            searchText += string
+        }else if range.length == 1{
+            searchText.removeLast()
+        }
+        
+   
+        
+        //print(searchText)
         print(searchText)
-        if searchText.count >= 2{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        if characterCountLimit <= newLength{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.searchViewModel.searchFilter(searchText, self.modelType)
                 self.searchListItemsReload()
             }
          
         }else{
-            searchViewModel.searchListItems.removeAll()
+            if !searchViewModel.searchListItems.isEmpty {
+                searchViewModel.searchListItems.removeAll()
+            }
+       
+           self.searchListItemsReload()
         }
+        self.searchListItemsReload()
       
-        searchListItemsReload()
-        
-        
         return true
     }
 }
@@ -165,11 +166,33 @@ private extension SearchViewController{
         imageView.image = image
         searchTextField.rightView = imageView
         
-        
         hotelFlightButtonUI()
     }
     private func hotelFlightButtonUI(){
         hotelsButtonSelected()
         flightsButtonUnselected()
     }
+    private func hotelsButtonSelected(){
+        flightsButtonUnselected()
+        hotelsButton.setTitleColor(buttonSelectedColor, for: .normal)
+        hotelsButton.setImage(UIImage(named: "hotelChecked"), for: .normal)
+        hotelsButtonLine.isHidden = false
+    }
+    private func hotelsButtonUnselected(){
+        hotelsButton.setTitleColor(buttonUnselectedColor, for: .normal)
+        hotelsButton.setImage(UIImage(named: "hotelUnchecked"), for: .normal)
+        hotelsButtonLine.isHidden = true
+    }
+    private func flightsButtonSelected(){
+        hotelsButtonUnselected()
+        flightsButton.setTitleColor(buttonSelectedColor, for: .normal)
+        flightsButton.setImage(UIImage(named: "planeChecked"), for: .normal)
+        flightsButtonLine.isHidden = false
+    }
+    private func flightsButtonUnselected(){
+        flightsButton.setTitleColor(buttonUnselectedColor, for: .normal)
+        flightsButton.setImage(UIImage(named: "planeUnchecked"), for: .normal)
+        flightsButtonLine.isHidden = true
+    }
+    
 }

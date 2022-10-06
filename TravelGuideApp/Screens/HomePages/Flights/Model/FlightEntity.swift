@@ -18,3 +18,14 @@ struct FlightElement: Codable {
     let price: String?
     let image: String?
 }
+
+
+// MARK: - FlightEntity CORE_DATA
+struct FlightCoreDataEntity{
+    let id: Int?
+    let flightCompany, flightNumber, flightTitle: String?
+    let departAirport, arrivalAirport, departDate, arrivalDate, day: String?
+    let price: String?
+    let image: String?
+}
+

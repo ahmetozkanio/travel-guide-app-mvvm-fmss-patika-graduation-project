@@ -62,14 +62,14 @@ extension SearchViewModel: HotelListItemsDelegate{
     func getHotelItems(_ items: [HotelElement]) {
         listItems = items
         searchListItems.removeAll()
-        //NotificationCenter.default.post(name: Notification.Name("ListItemReloadData"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("SearchListItemReloadData"), object: nil)
     }
 }
 extension SearchViewModel: FlightListItemsDelegate{
     func getFlightItems(_ items: [FlightElement]) {
         listItems = items
         searchListItems.removeAll()
-       //NotificationCenter.default.post(name: Notification.Name("ListItemReloadData"), object: nil)
+       NotificationCenter.default.post(name: Notification.Name("SearchListItemReloadData"), object: nil)
     }
 }
 
@@ -95,12 +95,18 @@ extension SearchViewModel{
         switch initial {
         case .hotels:
             let hotels: [HotelElement] = searchListItems as! [HotelElement]
-            return ListEntityGlobalTableViewCell(image: hotels[indexPath.row].image, title: hotels[indexPath.row].name, subTitle: hotels[indexPath.row].price )
+            if !hotels.isEmpty {
+                return ListEntityGlobalTableViewCell(image: hotels[indexPath.row].image, title: hotels[indexPath.row].name, subTitle: hotels[indexPath.row].price )
+            }
+           
         case .flights:
+            
             let flights: [FlightElement] = searchListItems as! [FlightElement]
+            if !flights.isEmpty {
             return ListEntityGlobalTableViewCell(image: flights[indexPath.row].image, title: flights[indexPath.row].flightTitle, subTitle: flights[indexPath.row].flightCompany )
+            }
         }
 
-        
+        return nil
     }
 }
