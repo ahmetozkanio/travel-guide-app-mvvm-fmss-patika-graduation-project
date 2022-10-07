@@ -149,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				48146B7A28EC993700C8400C /* Model */,
-				48146B7728EC96D800C8400C /* ViewModel */,
 				480891D628EADACD000D7366 /* View */,
+				48146B7728EC96D800C8400C /* ViewModel */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";

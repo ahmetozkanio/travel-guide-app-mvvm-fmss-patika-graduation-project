@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    private let detailViewModel: DetailViewModel = DetailViewModel()
+    
     var item: DetailEntity?
  
     override func viewDidLoad() {
@@ -22,18 +24,33 @@ class DetailViewController: UIViewController {
         imageUISetup()
         configure()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(successAddBookmark), name: Notification.Name("addBookmark"), object: nil)
+    }
+    @objc func successAddBookmark(){
+        
+    }
     
-
+    
     @IBAction func backButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func addBookmarkButtonClicked(_ sender: Any) {
+        if let item = self.item{
+  
+            detailViewModel.addBookmarkButtonClick(item) { result in
+                if result{
+                    
+                }else{
+                    
+                }
+            }
+        }
     }
 }
 extension DetailViewController{
     func configure(){
         if item != nil {
-           
             titleLabel.text = item?.titleLabel
             mainTitleLabel.text = item?.mainTitleLabel
             descriptionLabel.text = item?.descriptionLabel
@@ -41,6 +58,12 @@ extension DetailViewController{
         }
     }
 }
+extension DetailViewController{
+    func butonBookmarksChangeStatus(){
+        
+    }
+}
+
 
 private extension DetailViewController{
     func imageUISetup(){

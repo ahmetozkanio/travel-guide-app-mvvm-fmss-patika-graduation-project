@@ -7,15 +7,19 @@
 
 import Foundation
 import CoreData.NSManagedObject
+import UIKit
 
 protocol BookmarksModelProtocol: AnyObject{
     func getBookmarks(onSuccess: @escaping ([BookmarksEntity]?) -> (), onError: @escaping (String?) -> ())
-    func addBookmarks(onSuccess: @escaping (Bool) -> (), onError: @escaping (String?) -> ())
+    func addBookmarks(_ bookmarkItem: BookmarksEntity? ,onSuccess: @escaping (Bool) -> ())
 }
 
-final class BookmarksModel: BookmarksModelProtocol{
+final class BookmarksModel{
     private let entityName = "Bookmarks"
     private var bookmarkList: [BookmarksEntity] = []
+    //private var bookmarkItem: BookmarksEntity?
+   // private lazy var serCoreData: CoreDataManager = CoreDataManager()
+
     
     func getBookmarks(onSuccess: @escaping ([BookmarksEntity]?) -> (), onError: @escaping (String?) -> ()) {
         CoreDataManager.shared.getCoreData("Bookmarks") { [self] results in
@@ -29,19 +33,27 @@ final class BookmarksModel: BookmarksModelProtocol{
             onError(error)
         }
     }
-    func addBookmarks(onSuccess: @escaping (Bool) -> (), onError: @escaping (String?) -> ()) {
-        CoreDataManager.shared.getCoreData("Bookmarks") { [self] results in
-            for result in results as! [NSManagedObject]{
-                self.bookmarkList.append(
-                    BookmarksEntity(id: result.value(forKey: "id") as? UUID , title: result.value(forKey: "title") as? String, subTitle: result.value(forKey: "subTitle") as? String, content: result.value(forKey: "content") as? String, image: result.value(forKey: "image") as? String)
-                )
+    func addBookmarks(_ bookmarkItem: BookmarksEntity? ,onSuccess: @escaping (Bool) -> ()) {
+        CoreDataManager.shared.setCoreData(bookmarkItem, self.entityName) { result in
+            if result{
+                onSuccess(true)
             }
-            onSuccess(true)
         } onError: { error in
-            onError(error)
+            onSuccess(false)
+            print(error ?? "")
         }
-    }
-    
+
+       
    
-  
+    
+
+
+    }
 }
+/*
+extension BookmarksModel: SetCoreDataProtocol{
+    func setCoreDataInsert(_ insertObj: NSManagedObjectContext) -> Bool {
+        
+        return true
+}
+*/

@@ -9,12 +9,16 @@ import UIKit
 
 class BookmarksViewController: UIViewController {
 
+    
+
     @IBOutlet weak var bookmarksTableView: UITableView!
     
     private lazy var bookmarksViewModel: BookmarksViewModel = BookmarksViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bookmarksViewModel.delegate = self
+        bookmarksViewModel.didViewLoad()
         bookmarksTableViewInitial()
     }
     
@@ -28,7 +32,13 @@ class BookmarksViewController: UIViewController {
         
     }
 }
-
+extension BookmarksViewController:BookmarksViewModelProtocol {
+    func reloadBookmarks() {
+        DispatchQueue.main.async {
+            self.bookmarksTableView.reloadData()
+        }
+    }
+}
 private extension BookmarksViewController{
     private func bookmarksTableViewInitial(){
         bookmarksTableView.delegate = self

@@ -7,12 +7,13 @@
 
 import Foundation
 
+
 protocol BookmarksViewModelProtocol: AnyObject{
     func reloadBookmarks()
 }
 
 final class BookmarksViewModel{
-    private let bookmarksModel: BookmarksModelProtocol = BookmarksModel()
+    private let bookmarksModel: BookmarksModel = BookmarksModel()
     weak var delegate: BookmarksViewModelProtocol?
     
     private var bookmarkItems: [BookmarksEntity] = []
@@ -28,11 +29,21 @@ extension BookmarksViewModel{
         bookmarksModel.getBookmarks {[weak self] (model) in
             print("Bookmarks Items")
             self?.bookmarkItems = model ?? []
-            //self?.flightListItemsDelegate?.getFlightItems(model?.flights ?? [])
+            self?.delegate?.reloadBookmarks()
         } onError: { error in
             print(error ?? "Error initBookmarksCoreData")
         }
     }
+    /*
+    func addBookmarksCoreData(_ bookmarkItem: BookmarksEntity){
+        bookmarksModel.addBookmarks(bookmarkItem) { result in
+            if result{
+                print("kayit edildi")
+            }
+        } onError: { error in
+            print("ALERT Error")
+        }
+    }*/
 }
 
 extension BookmarksViewModel{
