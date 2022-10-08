@@ -37,9 +37,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as? ArticleCollectionViewCell
         
         if let cellData = homeViewModel.getArticleCellData(indexPath: indexPath) {
-            cell?.configureArticleCellData(item: cellData)
+            cell?.configureArticleCellData(item: cellData,articleItems: self.homeViewModel.getArticleElementModel() ?? [],index: indexPath)
             return cell!
         }
+        
+  
             return cell!
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

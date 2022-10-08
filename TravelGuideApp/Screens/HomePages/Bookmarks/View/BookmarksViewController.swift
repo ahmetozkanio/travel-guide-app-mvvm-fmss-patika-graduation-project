@@ -21,6 +21,9 @@ class BookmarksViewController: UIViewController {
         bookmarksViewModel.didViewLoad()
         bookmarksTableViewInitial()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(bookmarksAddAndRemoveData), name: Notification.Name("reloadBookmarksData"), object: nil)
+    }
     
     private func goToDetailViewController(_ item: DetailEntity?){
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
@@ -32,8 +35,13 @@ class BookmarksViewController: UIViewController {
         
     }
 }
+extension BookmarksViewController{
+    @objc func bookmarksAddAndRemoveData(){
+        bookmarksViewModel.addAndRemoveProcess()
+    }
+}
 extension BookmarksViewController:BookmarksViewModelProtocol {
-    func reloadBookmarks() {
+   func reloadBookmarks() {
         DispatchQueue.main.async {
             self.bookmarksTableView.reloadData()
         }

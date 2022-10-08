@@ -23,6 +23,7 @@ final class BookmarksModel{
     
     func getBookmarks(onSuccess: @escaping ([BookmarksEntity]?) -> (), onError: @escaping (String?) -> ()) {
         CoreDataManager.shared.getCoreData("Bookmarks") { [self] results in
+            bookmarkList.removeAll()
             for result in results as! [NSManagedObject]{
                 self.bookmarkList.append(
                     BookmarksEntity(id: result.value(forKey: "id") as? UUID , title: result.value(forKey: "title") as? String, subTitle: result.value(forKey: "subTitle") as? String, content: result.value(forKey: "content") as? String, image: result.value(forKey: "image") as? String)
@@ -42,18 +43,16 @@ final class BookmarksModel{
             onSuccess(false)
             print(error ?? "")
         }
-
-       
-   
+    }
     
-
-
+    func removeBookmark(_ bookmarkItem: BookmarksEntity? ,onSuccess: @escaping (Bool) -> ()){
+        CoreDataManager.shared.deleteBookmark(bookmarkItem, entityName) { result in
+            if result{
+                onSuccess(true)
+            }else{
+                onSuccess(false)
+            }
+            
+        }
     }
 }
-/*
-extension BookmarksModel: SetCoreDataProtocol{
-    func setCoreDataInsert(_ insertObj: NSManagedObjectContext) -> Bool {
-        
-        return true
-}
-*/

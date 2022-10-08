@@ -26,6 +26,8 @@ extension CoreDataManager{
             if results.count > 0{
                 onSuccess(results)
             }else{
+                onSuccess([])
+
                 onError("GetCoreData result not found!")
             }
         }
@@ -48,6 +50,8 @@ extension CoreDataManager{
 
         do{
         try context.save()
+            print("Kayit edildi")
+
             onSuccess(true)
             // Declaring the save action with NotificationCenter
             //  NotificationCenter.default.post(name: NSNotification.Name("newToDoData"), object: nil)
@@ -57,6 +61,29 @@ extension CoreDataManager{
         }
     }
     
+    func deleteBookmark(_ bookmarkItem: BookmarksEntity?,_ entityName: String, onSuccess: @escaping (Bool) -> ()){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.returnsObjectsAsFaults = false
+        do{
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                if result.value(forKey: "title") as? String == bookmarkItem?.title{
+                    context.delete(result)
+                    print("Delete")
+                    try context.save()
+                    onSuccess(true)
+                    NotificationCenter.default.post(name: NSNotification.Name("reloadBookmarksData"), object: nil)
+                    return
+                }
+            }
+          
+            onSuccess(false)
+        }catch{
+            
+        }
+    }
     
 }
 

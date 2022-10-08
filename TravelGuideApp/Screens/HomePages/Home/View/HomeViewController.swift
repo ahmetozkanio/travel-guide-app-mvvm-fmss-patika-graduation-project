@@ -23,6 +23,14 @@ final class HomeViewController: UIViewController {
         homeViewModel.didViewLoad()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadArticle), name: Notification.Name("reloadArticle"), object: nil)
+    }
+    @objc func reloadArticle(){
+        articleItemsReload()
+    }
+    
     // MARK: - BUTTON CLICK
     @IBAction func flightButtonClicked(_ sender: Any) {
         goToListViewController(Constant.ListViewControllerInitialComponent.flights)
@@ -30,6 +38,7 @@ final class HomeViewController: UIViewController {
     @IBAction func hotelButtonClicked(_ sender: Any) {
         goToListViewController(Constant.ListViewControllerInitialComponent.hotels)
     }
+    
 }
 
 extension HomeViewController{
@@ -48,6 +57,7 @@ extension HomeViewController{
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
         controller.item = DetailEntity(imageView: item?.urlToImage, titleLabel: item?.author, mainTitleLabel: item?.title, descriptionLabel: item?.description)
+      
         self.present(controller, animated: true, completion: nil)
         
     }

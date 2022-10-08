@@ -19,12 +19,13 @@ final class BookmarksViewModel{
     private var bookmarkItems: [BookmarksEntity] = []
     
     func didViewLoad(){
+        
         initBookmarksCoreData()
     }
 }
 
 extension BookmarksViewModel{
-    
+  
     func initBookmarksCoreData(){
         bookmarksModel.getBookmarks {[weak self] (model) in
             print("Bookmarks Items")
@@ -33,6 +34,12 @@ extension BookmarksViewModel{
         } onError: { error in
             print(error ?? "Error initBookmarksCoreData")
         }
+    }
+    func addAndRemoveProcess(){
+        bookmarkItems.removeAll()
+        delegate?.reloadBookmarks()
+        
+        initBookmarksCoreData()
     }
     /*
     func addBookmarksCoreData(_ bookmarkItem: BookmarksEntity){

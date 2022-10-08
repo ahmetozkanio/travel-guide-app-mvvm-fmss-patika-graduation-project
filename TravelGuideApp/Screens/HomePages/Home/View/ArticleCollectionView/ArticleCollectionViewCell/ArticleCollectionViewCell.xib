@@ -127,6 +127,7 @@
             <size key="customSize" width="259" height="231"/>
             <connections>
                 <outlet property="bgroundView" destination="UWQ-zZ-QhN" id="jeH-DM-Lcm"/>
+                <outlet property="bookmarksButton" destination="iMT-Fl-3Au" id="tmL-Ox-htB"/>
                 <outlet property="imageView" destination="N07-GI-Wts" id="MKP-iP-dop"/>
                 <outlet property="titleLabel" destination="Toh-o3-Cli" id="JB2-Xe-PnN"/>
                 <outlet property="topTitleLabel" destination="IaU-su-3cu" id="xLh-A3-oDg"/>

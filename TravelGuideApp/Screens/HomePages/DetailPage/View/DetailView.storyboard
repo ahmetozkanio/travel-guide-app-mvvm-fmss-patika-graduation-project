@@ -132,6 +132,7 @@ Cg
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookmarkButton" destination="54Z-wG-SkW" id="2Di-xK-BSL"/>
                         <outlet property="descriptionLabel" destination="aPk-if-sa7" id="f6c-cF-6bk"/>
                         <outlet property="imageView" destination="GS7-G1-oZN" id="Axr-8k-7G9"/>
                         <outlet property="mainTitleLabel" destination="cEp-mE-DIo" id="XAn-65-ycM"/>
