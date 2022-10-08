@@ -80,7 +80,7 @@ extension ArticleCollectionViewCell{
         situationButton = situationBookmark
         if situationBookmark{
             
-            bookmarksButton.setImage(UIImage(named: "backButton"), for: .normal)
+            bookmarksButton.setImage(UIImage(named: "bookmarkRemove"), for: .normal)
             
         }else{
             bookmarksButton.setImage(UIImage(named: "bookMarkAdd"), for: .normal)

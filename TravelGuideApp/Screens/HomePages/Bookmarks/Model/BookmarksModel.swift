@@ -29,7 +29,8 @@ final class BookmarksModel{
                     BookmarksEntity(id: result.value(forKey: "id") as? UUID , title: result.value(forKey: "title") as? String, subTitle: result.value(forKey: "subTitle") as? String, content: result.value(forKey: "content") as? String, image: result.value(forKey: "image") as? String)
                 )
             }
-            onSuccess(bookmarkList)
+       
+            onSuccess(bookmarkList.reversed())
         } onError: { error in
             onError(error)
         }
