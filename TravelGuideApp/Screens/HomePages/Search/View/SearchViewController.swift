@@ -19,6 +19,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var hotelsButtonLine: UIView!
     @IBOutlet weak var flightsButtonLine: UIView!
     
+    @IBOutlet weak var searchNoDataView: UIView!
     
     private let buttonSelectedColor = UIColor(red: 255 / 255.0, green: 71 / 255.0, blue: 96 / 255.0, alpha: 1.0)
     private let buttonUnselectedColor =  UIColor(red: 194 / 255.0, green: 197 / 255.0, blue: 214 / 255.0, alpha: 1.0)
@@ -29,7 +30,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchViewModel.delegate = self
         searchTextField.delegate = self
         searchViewModel.initialSearchListModel(modelType)
         listTableViewInitial()
@@ -65,7 +66,17 @@ class SearchViewController: UIViewController {
         
     }
 }
-
+extension SearchViewController: SearchViewModelProtocol{
+    func searchNoHideData() {
+        searchNoDataView.isHidden = false
+    }
+    
+    func searchShowData() {
+        searchNoDataView.isHidden = true
+    }
+    
+    
+}
 private extension SearchViewController{
     @objc func searchListItemsReload() {
         DispatchQueue.main.async {
@@ -151,7 +162,7 @@ extension SearchViewController: UITextFieldDelegate{
                 searchViewModel.searchListItems.removeAll()
             }
        
-           self.searchListItemsReload()
+          // self.searchListItemsReload()
         }
         self.searchListItemsReload()
       
@@ -160,6 +171,10 @@ extension SearchViewController: UITextFieldDelegate{
 }
 private extension SearchViewController{
     private func searchUI(){
+        
+        searchNoDataView.isHidden = true
+        
+        
         searchTextField.rightViewMode = UITextField.ViewMode.always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         let image = UIImage(named: "search")

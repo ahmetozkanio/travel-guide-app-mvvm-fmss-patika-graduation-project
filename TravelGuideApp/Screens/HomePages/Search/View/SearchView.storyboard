@@ -22,18 +22,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Where next?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-qy-0qB">
-                                <rect key="frame" x="16" y="198.5" width="382" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="X7I-U8-X1Z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="56P-x5-TSl">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-Gt-Ivf">
                                 <rect key="frame" x="16" y="134.5" width="382" height="40"/>
                                 <subviews>
@@ -111,6 +99,32 @@
                                     <constraint firstItem="8x8-vm-sko" firstAttribute="top" secondItem="UFR-Gt-Ivf" secondAttribute="top" id="zW6-48-T7z"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Where next?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-qy-0qB">
+                                <rect key="frame" x="16" y="198.5" width="382" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="X7I-U8-X1Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="56P-x5-TSl">
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAH-59-G8A">
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchNoData" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-ml-Brb">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="139"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dUe-ml-Brb" firstAttribute="top" secondItem="UAH-59-G8A" secondAttribute="top" constant="8" id="FbN-uD-0AW"/>
+                                    <constraint firstItem="dUe-ml-Brb" firstAttribute="leading" secondItem="UAH-59-G8A" secondAttribute="leading" id="Mw5-nh-Grb"/>
+                                    <constraint firstAttribute="trailing" secondItem="dUe-ml-Brb" secondAttribute="trailing" id="d2Z-7r-zdO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,11 +134,15 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="56P-x5-TSl" secondAttribute="bottom" id="5It-MX-NJ5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="N61-Ei-hNI" secondAttribute="trailing" constant="16" id="9jZ-re-qrg"/>
                             <constraint firstItem="56P-x5-TSl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FT2-vD-J0o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UAH-59-G8A" secondAttribute="bottom" id="GgP-WA-e0r"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UFR-Gt-Ivf" secondAttribute="trailing" constant="16" id="HBE-PV-YzI"/>
                             <constraint firstItem="N61-Ei-hNI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ImC-LO-Nij"/>
+                            <constraint firstItem="UAH-59-G8A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IvV-eb-qGK"/>
                             <constraint firstItem="ibP-qy-0qB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ruq-ub-X7t"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="56P-x5-TSl" secondAttribute="trailing" id="bTb-Pm-hhk"/>
+                            <constraint firstItem="UAH-59-G8A" firstAttribute="top" secondItem="ibP-qy-0qB" secondAttribute="bottom" constant="8" id="flD-D4-Tt8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ibP-qy-0qB" secondAttribute="trailing" constant="16" id="huB-c7-YUR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UAH-59-G8A" secondAttribute="trailing" id="j6w-n8-bcN"/>
                             <constraint firstItem="56P-x5-TSl" firstAttribute="top" secondItem="ibP-qy-0qB" secondAttribute="bottom" constant="8" id="kHl-5r-gUb"/>
                             <constraint firstItem="UFR-Gt-Ivf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="u2K-lk-ImD"/>
                             <constraint firstItem="UFR-Gt-Ivf" firstAttribute="top" secondItem="N61-Ei-hNI" secondAttribute="bottom" constant="8" id="vfd-ar-HeA"/>
@@ -136,6 +154,7 @@
                         <outlet property="flightsButtonLine" destination="vlR-Mz-1aN" id="G44-sc-Q2T"/>
                         <outlet property="hotelsButton" destination="r2P-p9-tuU" id="UrA-AM-10E"/>
                         <outlet property="hotelsButtonLine" destination="ajh-rn-dyn" id="YdG-Gx-Ehq"/>
+                        <outlet property="searchNoDataView" destination="UAH-59-G8A" id="1ug-Uw-u9V"/>
                         <outlet property="searchTableView" destination="56P-x5-TSl" id="qOE-a9-jPi"/>
                         <outlet property="searchTextField" destination="ibP-qy-0qB" id="5FH-rh-aKK"/>
                     </connections>
@@ -171,6 +190,7 @@
     <resources>
         <image name="hotelChecked" width="24" height="24"/>
         <image name="planeUnchecked" width="24" height="24"/>
+        <image name="searchNoData" width="304" height="139"/>
         <image name="selectSearchIcon" width="68" height="48"/>
         <image name="unselectSearchIcon" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">

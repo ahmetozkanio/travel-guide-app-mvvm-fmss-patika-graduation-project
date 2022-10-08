@@ -7,11 +7,17 @@
 
 import Foundation
 
+protocol SearchViewModelProtocol: AnyObject{
+    func searchNoHideData()
+    func searchShowData()
+}
+
 final class SearchViewModel{
     
     private lazy var hotelViewModel: HotelViewModel = HotelViewModel()
     private lazy var flightViewModel: FlightViewModel = FlightViewModel()
-        
+    
+    weak var delegate: SearchViewModelProtocol?
     var listItems = [Any]()
     var searchListItems = [Any]()
     var searching:Bool = false
@@ -29,14 +35,26 @@ final class SearchViewModel{
          }
      }
 }
-
+extension SearchViewModel{
+    func searchNoDataFilter(){
+        if searchListItems.count > 0{
+            delegate?.searchShowData()
+            print("DATA var")
+        }else{
+            delegate?.searchNoHideData()
+            print("DATA YOk")
+        }
+    }
+}
 extension SearchViewModel{
     func searchFilter(_ queryText: String,_ initial: Constant.SearchModel){
         switch initial {
         case .hotels:
             hotelFilter(queryText)
+            searchNoDataFilter()
         case .flights:
             flightFilter(queryText)
+            searchNoDataFilter()
         }
     }
     func hotelFilter(_ queryText: String){
@@ -45,8 +63,11 @@ extension SearchViewModel{
         searchListItems = hotels.filter({ (result) -> Bool in
             return result.name?.range(of: queryText, options: .caseInsensitive) != nil
         })
+   
         
     }
+    
+    
     func flightFilter(_ queryText: String){
    
    
