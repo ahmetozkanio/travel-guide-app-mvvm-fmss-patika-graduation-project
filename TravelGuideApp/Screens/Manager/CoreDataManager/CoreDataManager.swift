@@ -14,7 +14,7 @@ final class CoreDataManager{
 }
 extension CoreDataManager{
     
-    //used to pull data from core data
+    // CoreData the process of get data based on entityName with this generic func
     func getCoreData(_ entityName: String, onSuccess: @escaping ([NSFetchRequestResult]) -> (), onError:(String?) -> ()){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -22,12 +22,10 @@ extension CoreDataManager{
         fetchRequest.returnsObjectsAsFaults = false
         do{
             let results = try context.fetch(fetchRequest)
-            //data from core data
             if results.count > 0{
                 onSuccess(results)
             }else{
                 onSuccess([])
-
                 onError("GetCoreData result not found!")
             }
         }
@@ -36,31 +34,26 @@ extension CoreDataManager{
             onError("GetCoreData Error")
         }
     }
-    
+    // Saved of BookmarkItem entity
     func setCoreData(_ bookmarkItem: BookmarksEntity?,_ entityName: String, onSuccess: @escaping (Bool) -> (), onError:(String?) -> ()){
         guard let item = bookmarkItem else { return }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let setData = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
-            setData.setValue(UUID(), forKey: "id")
-            setData.setValue(item.title, forKey: "title")
-            setData.setValue(item.subTitle, forKey: "subTitle")
-            setData.setValue(item.content, forKey: "content")
-            setData.setValue(item.image, forKey: "image")
-
+        setData.setValue(UUID(), forKey: "id")
+        setData.setValue(item.title, forKey: "title")
+        setData.setValue(item.subTitle, forKey: "subTitle")
+        setData.setValue(item.content, forKey: "content")
+        setData.setValue(item.image, forKey: "image")
         do{
-        try context.save()
-            print("Kayit edildi")
-
+            try context.save()
             onSuccess(true)
-            // Declaring the save action with NotificationCenter
-            //  NotificationCenter.default.post(name: NSNotification.Name("newToDoData"), object: nil)
         } catch{
             onError("Set CoreData error")
-            print("Error")
+            print("Set CoreData error")
         }
     }
-    
+    // Delete of BookmarkItem entity
     func deleteBookmark(_ bookmarkItem: BookmarksEntity?,_ entityName: String, onSuccess: @escaping (Bool) -> ()){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -71,20 +64,17 @@ extension CoreDataManager{
             for result in results as! [NSManagedObject]{
                 if result.value(forKey: "title") as? String == bookmarkItem?.title{
                     context.delete(result)
-                    print("Delete")
                     try context.save()
                     onSuccess(true)
                     NotificationCenter.default.post(name: NSNotification.Name("reloadBookmarksData"), object: nil)
                     return
                 }
             }
-          
             onSuccess(false)
         }catch{
-            
+            onSuccess(false)
         }
     }
-    
 }
 
 

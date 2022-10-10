@@ -16,6 +16,8 @@ class GlobalTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    var tagName: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -27,6 +29,12 @@ extension GlobalTableViewCell{
             titleLabel.text = item?.title ?? ""
             subtitleLabel.text = item?.subTitle ?? ""
             imageViewBg.kf.setImage(with:  URL(string: item?.image! ?? ""))
+            tagName = item?.tagName
+            if let tagName = tagName{
+                tagLabel.text = tagName
+                tagLabel.isHidden = false
+            }
+           
         }
        
     }
@@ -37,16 +45,10 @@ private extension GlobalTableViewCell{
     {
         tagLabelUI()
         imageViewBglUI()
+        tagLabel.isHidden = true
     }
     private func imageViewBglUI(){
       
-        /*
-        let coverLayer = CALayer()
-        coverLayer.frame = imageViewBg.bounds;
-        coverLayer.backgroundColor =  UIColor.black.cgColor
-        coverLayer.opacity = 0.3
-        viewBg.layer.addSublayer(coverLayer)
-        */
         viewBg.layer.cornerRadius = 8
         viewBg.layer.shadowColor = UIColor.gray.cgColor
         viewBg.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)

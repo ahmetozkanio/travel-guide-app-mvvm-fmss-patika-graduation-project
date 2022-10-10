@@ -7,35 +7,30 @@
 
 import UIKit
 import Kingfisher
+import Toast
 
 class ArticleCollectionViewCell: UICollectionViewCell {
-
-   
+    
     @IBOutlet weak var bgroundView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-   
     @IBOutlet weak var bookmarksButton: UIButton!
-    private var situationButton: Bool?
     
+    private var situationButton: Bool?
     private lazy var homeViewModel: HomeViewModel = HomeViewModel()
     private var articleItems: [ArticleElement]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupUI()
         viewBgUI()
         bookmarksButton.addTarget(self, action: #selector(bookmarksButtonClick(sender:)), for: .touchUpInside)
     }
     
-    
     @objc func bookmarksButtonClick(sender: UIButton){
         let buttonTag = sender.tag
-        print(buttonTag)
-
         self.bookmarkButton(buttonTag)
-      
     }
     @IBAction func addBookmarkButtonClicked(_ sender: Any) {
     }
@@ -43,28 +38,26 @@ class ArticleCollectionViewCell: UICollectionViewCell {
 extension ArticleCollectionViewCell{
     func bookmarkButton(_ buttonTag: Int) {
         if let item = articleItems?[buttonTag]{
-           if  situationButton != nil{
+            if  situationButton != nil{
                 if situationButton!{
                     homeViewModel.removeBookmarkButtonClick(item) { result in
                         if result{
                             self.buttonBookmarksChangeStatus(false)
-                        }else{
-                            
+                            self.hideToast()
+                            self.makeToast("Bookmark Removed",position: ToastPosition.center)
                         }
                     }
                 }else{
                     homeViewModel.addBookmarkButtonClick(item) { result in
                         if result{
                             self.buttonBookmarksChangeStatus(true)
-                        }else{
-                            
+                            self.hideToast()
+                            self.makeToast("Bookmark Added",position: ToastPosition.center)
                         }
                     }
                 }
                 NotificationCenter.default.post(name: NSNotification.Name("reloadBookmarksData"), object: nil)
-                //NotificationCenter.default.post(name: NSNotification.Name("reloadBookmarksData"), object: nil)
             }
-           
         }
     }
 }
@@ -79,9 +72,7 @@ extension ArticleCollectionViewCell{
     func buttonBookmarksChangeStatus(_ situationBookmark: Bool){
         situationButton = situationBookmark
         if situationBookmark{
-            
             bookmarksButton.setImage(UIImage(named: "bookmarkRemove"), for: .normal)
-            
         }else{
             bookmarksButton.setImage(UIImage(named: "bookMarkAdd"), for: .normal)
         }
@@ -90,15 +81,14 @@ extension ArticleCollectionViewCell{
 
 extension ArticleCollectionViewCell{
     func configureArticleCellData(item: ArticleCellModel,articleItems: [ArticleElement],index: IndexPath){
+        
         self.articleItems = articleItems
         topTitleLabel.text = item.title
         titleLabel.text = item.mainTitle
         imageView.kf.setImage(with:  URL(string: item.image!))
         bookmarksButton.tag = index.row
-       
+        
         self.articleViewInitialBookmark(articleItems[index.row])
-        
-        
     }
 }
 
@@ -107,8 +97,8 @@ private extension ArticleCollectionViewCell{
         imageViewBglUI()
     }
     private func imageViewBglUI(){
-       // imageView.layer.cornerRadius = 8
-      //  imageView.clipsToBounds = true
+        // imageView.layer.cornerRadius = 8
+        //  imageView.clipsToBounds = true
     }
     private func viewBgUI(){
         bgroundView.layer.cornerRadius = 8
@@ -116,7 +106,10 @@ private extension ArticleCollectionViewCell{
         bgroundView.layer.shadowOffset = CGSize(width: 2, height: 2)
         bgroundView.layer.shadowRadius = 7.0
         bgroundView.layer.shadowOpacity = 0.6
-         //imageView.layer.cornerRadius = 8
-        //imageView.clipsToBounds = true
+        bgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+     
     }
 }

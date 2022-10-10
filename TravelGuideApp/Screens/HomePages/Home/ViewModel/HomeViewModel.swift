@@ -48,9 +48,12 @@ extension HomeViewModel{
         return articleItems
     }
     func initArticleService(){
+ 
         articleService.fetchArticles {[weak self] (models) in
             self?.articleItems = (models?.articles)!
             self?.delegate?.articleItemsReload()
+          
+          
         } onError: { error in
             print(error ?? "Error initArticleService")
         }

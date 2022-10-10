@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,13 +25,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N61-Ei-hNI">
-                                <rect key="frame" x="16" y="88" width="382" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <rect key="frame" x="16" y="88" width="382" height="38"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-Gt-Ivf">
-                                <rect key="frame" x="16" y="134.5" width="382" height="40"/>
+                                <rect key="frame" x="16" y="134" width="382" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8x8-vm-sko">
                                         <rect key="frame" x="0.0" y="0.0" width="195" height="40"/>
@@ -33,7 +41,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-p9-tuU">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="37"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
                                                         <state key="normal" title="Hotels" image="hotelChecked">
                                                             <color key="titleColor" red="0.91859847309999998" green="0.26912158730000002" blue="0.37343013289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +75,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6p-A1-ciw">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
                                                         <state key="normal" title="Flights" image="planeUnchecked">
                                                             <color key="titleColor" red="0.76078431369999999" green="0.7725490196" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -100,19 +108,19 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Where next?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-qy-0qB">
-                                <rect key="frame" x="16" y="198.5" width="382" height="52"/>
+                                <rect key="frame" x="16" y="198" width="382" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="X7I-U8-X1Z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="56P-x5-TSl">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
+                                <rect key="frame" x="0.0" y="258" width="414" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAH-59-G8A">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
+                                <rect key="frame" x="0.0" y="258" width="414" height="555"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchNoData" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-ml-Brb">
                                         <rect key="frame" x="0.0" y="8" width="414" height="139"/>
@@ -167,7 +175,9 @@
         <scene sceneID="ciA-aD-ZQi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y8d-V0-gvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="unselectSearchIcon" selectedImage="selectSearchIcon" id="kLg-bm-5MO"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectSearchIcon" selectedImage="selectSearchIcon" id="kLg-bm-5MO">
+                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="wS1-R2-Wf3">

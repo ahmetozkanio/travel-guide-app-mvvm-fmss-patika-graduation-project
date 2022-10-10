@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import Toast
 
 final class HomeViewController: UIViewController {
     
     @IBOutlet weak var topBgImageView: UIImageView!
     @IBOutlet weak var articleCollectionView: UICollectionView!
+    @IBOutlet weak var articleIndicatorLoading: UIActivityIndicatorView!
     
     lazy var homeViewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         uiElementDesignInitial()
         articleCollectionViewInitial()
         
@@ -26,9 +29,12 @@ final class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadArticle), name: Notification.Name("reloadArticle"), object: nil)
+      
     }
     @objc func reloadArticle(){
         articleItemsReload()
+        articleIndicatorLoading.isHidden = false
+       // self.view.makeToast("This is a piece of toast")
     }
     
     // MARK: - BUTTON CLICK
@@ -56,7 +62,7 @@ extension HomeViewController{
         let controller  = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
-        controller.item = DetailEntity(imageView: item?.urlToImage, titleLabel: item?.author, mainTitleLabel: item?.title, descriptionLabel: item?.description)
+        controller.item = DetailEntity(imageView: item?.urlToImage, titleLabel: item?.author, mainTitleLabel: item?.title, descriptionLabel: item?.content)
       
         self.present(controller, animated: true, completion: nil)
         
@@ -65,6 +71,7 @@ extension HomeViewController{
 private extension HomeViewController{
     private func uiElementDesignInitial(){
         imageShadow()
+        articleIndicatorLoading.isHidden = false
     }
     private func imageShadow(){
         topBgImageView.layer.shadowColor = UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0).cgColor

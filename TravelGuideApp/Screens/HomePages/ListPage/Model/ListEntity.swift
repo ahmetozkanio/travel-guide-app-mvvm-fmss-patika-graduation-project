@@ -12,4 +12,5 @@ struct ListEntityGlobalTableViewCell{
     var image: String?
     var title: String?
     var subTitle: String?
+    var tagName: String?
 }

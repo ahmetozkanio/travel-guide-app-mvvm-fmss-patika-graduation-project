@@ -9,32 +9,29 @@ import Foundation
 
 final class DetailViewModel{
     private let bookmarksModel: BookmarksModel = BookmarksModel()
-   // private let bookmarksViewModel: BookmarksViewModel = BookmarksViewModel()
 }
 extension DetailViewModel{
-    
-    
+    // DetailView AddBookmarkButton click core data add function
     func addBookmarkButtonClick(_ item: DetailEntity?,_ isSuccess: @escaping (Bool) -> ()){
         
         let bookmarksItem = BookmarksEntity(id: UUID(),title: item?.mainTitleLabel , subTitle:item?.titleLabel, content: item?.descriptionLabel, image: item?.imageView)
+        
         bookmarksModel.addBookmarks(bookmarksItem) { result in
                 isSuccess(result)
-          //  self.bookmarksViewModel.reloadDataInit()
         }
     }
-    
+    // DetailView AddBookmarkButton click core data delete function
     func removeBookmarkButtonClick(_ item: DetailEntity?,_ isSuccess: @escaping (Bool) -> ()){
         let bookmarksItem = BookmarksEntity(id: UUID(),title: item?.mainTitleLabel , subTitle: item?.titleLabel , content: item?.descriptionLabel, image: item?.imageView)
         bookmarksModel.removeBookmark(bookmarksItem) { result in
             if result{
                 isSuccess(true)
-               // self.bookmarksViewModel.reloadDataInit()
             }else{
                 isSuccess(false)
             }
         }
     }
-    
+    // DetailView initial bookmarkButton click delete/add control coreData is avaliable
     func bookmarkInitialButton(_ item: DetailEntity?,_ isSuccess: @escaping (Bool) -> ()){
         if item != nil{
             bookmarksModel.getBookmarks { bookmarks in
@@ -50,11 +47,8 @@ extension DetailViewModel{
             } onError: { error in
                 print(error ?? " ERROR ")
             }
-
         }else{
             print("item nil")
         }
-   
-        
     }
 }

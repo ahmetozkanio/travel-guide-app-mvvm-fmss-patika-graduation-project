@@ -23,6 +23,7 @@ extension HomeViewController: HomeViewModelProtocol{
     func articleItemsReload() {
         DispatchQueue.main.async {
               self.articleCollectionView.reloadData()
+            self.articleIndicatorLoading.isHidden = true
           }
     }
 }

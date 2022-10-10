@@ -19,7 +19,6 @@ struct FlightElement: Codable {
     let image: String?
 }
 
-
 // MARK: - FlightEntity CORE_DATA
 struct FlightCoreDataEntity{
     let id: Int?

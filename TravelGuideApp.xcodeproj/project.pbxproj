@@ -53,7 +53,10 @@
 		4875F94028E9FFFF00370A82 /* ArticleCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F93F28E9FFFF00370A82 /* ArticleCellEntity.swift */; };
 		4875F94428EA03BD00370A82 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94328EA03BD00370A82 /* Constant.swift */; };
 		4875F94628EA03CF00370A82 /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94528EA03CF00370A82 /* ServiceConstant.swift */; };
+		4889746528F4381D00274544 /* SourceSansPro in Resources */ = {isa = PBXBuildFile; fileRef = 4889746428F4381D00274544 /* SourceSansPro */; };
+		4889746728F4382B00274544 /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 4889746628F4382B00274544 /* Montserrat */; };
 		48A3EC9228E8772F000AFB4C /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3EC9128E8772F000AFB4C /* ListView.storyboard */; };
+		48F940B128F40F8C0060F459 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 48F940B028F40F8C0060F459 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +106,8 @@
 		4875F93F28E9FFFF00370A82 /* ArticleCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellEntity.swift; sourceTree = "<group>"; };
 		4875F94328EA03BD00370A82 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4875F94528EA03CF00370A82 /* ServiceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
+		4889746428F4381D00274544 /* SourceSansPro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SourceSansPro; sourceTree = "<group>"; };
+		4889746628F4382B00274544 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Montserrat; sourceTree = "<group>"; };
 		48A3EC9128E8772F000AFB4C /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F940B128F40F8C0060F459 /* Toast in Frameworks */,
 				480891CD28EAD6BF000D7366 /* Kingfisher in Frameworks */,
 				4818DDE128E781CC00A0F33F /* Alamofire in Frameworks */,
 			);
@@ -330,6 +336,7 @@
 		4827615028E311C100DFD0EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4889745F28F41CFB00274544 /* Fonts */,
 				4827614928E30FC700DFD0EC /* Info.plist */,
 				4827614128E30FC300DFD0EC /* TravelGuideApp.xcdatamodeld */,
 				4827614428E30FC700DFD0EC /* Assets.xcassets */,
@@ -499,6 +506,15 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		4889745F28F41CFB00274544 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4889746628F4382B00274544 /* Montserrat */,
+				4889746428F4381D00274544 /* SourceSansPro */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		48F7233828EB65B30098C7D8 /* Flights */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +543,7 @@
 			packageProductDependencies = (
 				4818DDE028E781CC00A0F33F /* Alamofire */,
 				480891CC28EAD6BF000D7366 /* Kingfisher */,
+				48F940B028F40F8C0060F459 /* Toast */,
 			);
 			productName = TravelGuideApp;
 			productReference = 4827613528E30FC300DFD0EC /* TravelGuideApp.app */;
@@ -559,6 +576,7 @@
 			packageReferences = (
 				4818DDDF28E781CC00A0F33F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				480891CB28EAD6BF000D7366 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				48F940AF28F40F8C0060F459 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 4827613628E30FC300DFD0EC /* Products */;
 			projectDirPath = "";
@@ -579,6 +597,8 @@
 				4818DDD528E7030A00A0F33F /* ArticleCollectionViewCell.xib in Resources */,
 				4827617228E321F400DFD0EC /* SearchView.storyboard in Resources */,
 				48A3EC9228E8772F000AFB4C /* ListView.storyboard in Resources */,
+				4889746728F4382B00274544 /* Montserrat in Resources */,
+				4889746528F4381D00274544 /* SourceSansPro in Resources */,
 				4827614828E30FC700DFD0EC /* LaunchScreen.storyboard in Resources */,
 				4827614528E30FC700DFD0EC /* Assets.xcassets in Resources */,
 				4827616428E3205B00DFD0EC /* TabBarView.storyboard in Resources */,
@@ -860,6 +880,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		48F940AF28F40F8C0060F459 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -872,6 +900,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4818DDDF28E781CC00A0F33F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		48F940B028F40F8C0060F459 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48F940AF28F40F8C0060F459 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 

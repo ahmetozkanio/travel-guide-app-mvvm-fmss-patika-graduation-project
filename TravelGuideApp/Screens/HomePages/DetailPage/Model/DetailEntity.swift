@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: DetailEntity
 struct DetailEntity{
     var imageView: String?
     var titleLabel: String?

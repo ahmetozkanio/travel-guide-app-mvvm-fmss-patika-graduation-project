@@ -6,6 +6,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -20,66 +28,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeTopBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="Qet-ON-cTq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="tWE-pi-Tnj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="270" id="tWE-pi-Tnj"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Jq-AJw">
-                                <rect key="frame" x="0.0" y="467" width="414" height="334"/>
+                                <rect key="frame" x="0.0" y="511" width="414" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EX-8a-f4Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top-pick articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-TG-8tG">
-                                                <rect key="frame" x="24" y="0.0" width="390" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP-PICK ARTICLES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-TG-8tG">
+                                                <rect key="frame" x="24" y="8" width="390" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="aNj-hI-iIh"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="i7L-TG-8tG" firstAttribute="top" secondItem="9EX-8a-f4Z" secondAttribute="top" id="Jpp-vC-5SA"/>
+                                            <constraint firstItem="i7L-TG-8tG" firstAttribute="top" secondItem="9EX-8a-f4Z" secondAttribute="top" constant="8" id="Jpp-vC-5SA"/>
                                             <constraint firstAttribute="trailing" secondItem="i7L-TG-8tG" secondAttribute="trailing" id="PWi-uG-sej"/>
                                             <constraint firstAttribute="bottom" secondItem="i7L-TG-8tG" secondAttribute="bottom" id="l5y-rw-gce"/>
                                             <constraint firstItem="i7L-TG-8tG" firstAttribute="leading" secondItem="9EX-8a-f4Z" secondAttribute="leading" constant="24" id="lT4-Wd-eha"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nkq-xa-Nwt">
-                                        <rect key="frame" x="0.0" y="32" width="414" height="302"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nkq-xa-Nwt">
+                                        <rect key="frame" x="0.0" y="40" width="414" height="250"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="1Ah-Mw-eub"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="Mrd-Vf-vh6">
                                             <size key="itemSize" width="256" height="256"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                                         </collectionViewFlowLayout>
+                                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" id="eXR-HR-f9D">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
+                                            <color key="color" red="0.91859847309999998" green="0.26912158730000002" blue="0.37343013289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </activityIndicatorView>
                                         <cells/>
                                     </collectionView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CTh-67-4Qr">
-                                <rect key="frame" x="0.0" y="236.5" width="414" height="218.5"/>
+                                <rect key="frame" x="0.0" y="282" width="414" height="217"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8i-zw-ePS">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Where’s your next destination?">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" metaFont="system" size="32"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="24" headIndent="24" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-t2-LDv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where’s your next destination?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8i-zw-ePS">
+                                                <rect key="frame" x="24" y="0.0" width="366" height="80.5"/>
+                                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="W8i-zw-ePS" secondAttribute="trailing" constant="24" id="Fa6-cq-HB1"/>
+                                            <constraint firstItem="W8i-zw-ePS" firstAttribute="leading" secondItem="U6h-t2-LDv" secondAttribute="leading" constant="24" id="Vk3-rX-es5"/>
+                                            <constraint firstItem="W8i-zw-ePS" firstAttribute="top" secondItem="U6h-t2-LDv" secondAttribute="top" id="rMl-V9-KCW"/>
+                                            <constraint firstAttribute="height" constant="75" id="zw5-tt-puN"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoJ-DI-xxu">
-                                        <rect key="frame" x="0.0" y="76.5" width="414" height="142"/>
+                                        <rect key="frame" x="0.0" y="75" width="414" height="142"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1I-w6-5eT">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="124.5"/>
@@ -118,7 +140,7 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDg-MR-NSp">
                                                                         <rect key="frame" x="24" y="0.0" width="64" height="24.5"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -169,7 +191,7 @@
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-ch-JwJ">
                                                                 <rect key="frame" x="0.0" y="100" width="112" height="24.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -192,6 +214,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="U6h-t2-LDv" secondAttribute="trailing" id="2oK-17-ZEe"/>
+                                    <constraint firstItem="U6h-t2-LDv" firstAttribute="top" secondItem="CTh-67-4Qr" secondAttribute="top" id="Bx9-tA-R4x"/>
+                                    <constraint firstItem="AoJ-DI-xxu" firstAttribute="top" secondItem="U6h-t2-LDv" secondAttribute="bottom" id="I9n-sn-26f"/>
+                                    <constraint firstItem="U6h-t2-LDv" firstAttribute="leading" secondItem="CTh-67-4Qr" secondAttribute="leading" id="ORE-w0-9Wb"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -213,6 +241,7 @@
                     <navigationItem key="navigationItem" id="eov-JJ-uSA"/>
                     <connections>
                         <outlet property="articleCollectionView" destination="nkq-xa-Nwt" id="8q6-rh-s0T"/>
+                        <outlet property="articleIndicatorLoading" destination="eXR-HR-f9D" id="vjy-Y1-YGp"/>
                         <outlet property="topBgImageView" destination="Qet-ON-cTq" id="Uci-PF-Ujp"/>
                     </connections>
                 </viewController>
@@ -224,7 +253,9 @@
         <scene sceneID="ycD-vv-8U2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HlU-7h-fRO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="unselectHomeIcon" selectedImage="selectHomeIcon" id="kUC-E1-QKO"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectHomeIcon" selectedImage="selectHomeIcon" id="kUC-E1-QKO">
+                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="A4I-PC-SEd">
@@ -247,6 +278,9 @@
         <image name="plane" width="40" height="40"/>
         <image name="selectHomeIcon" width="68" height="48"/>
         <image name="unselectHomeIcon" width="68" height="48"/>
+        <systemColor name="quaternarySystemFillColor">
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

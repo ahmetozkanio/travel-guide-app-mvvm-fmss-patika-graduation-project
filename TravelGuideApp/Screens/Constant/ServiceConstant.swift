@@ -6,8 +6,6 @@
 //
 //
 
-//https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=54c017307b434df1a0b757b75c17bfa4
-
 import Foundation
 
 extension Constant{

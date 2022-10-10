@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Bookmarks View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7o-j8-dEF">
-                                <rect key="frame" x="16" y="88" width="398" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <rect key="frame" x="16" y="88" width="398" height="38"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Abk-cO-h8u">
-                                <rect key="frame" x="0.0" y="126.5" width="414" height="686.5"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -52,7 +57,9 @@
         <scene sceneID="bK2-0H-Pt1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CA0-MC-tkh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="unselectBookmarksIcon" selectedImage="selectBookmarksIcon" id="V6w-Ff-I3e"/>
+                    <tabBarItem key="tabBarItem" title="" image="unselectBookmarksIcon" selectedImage="selectBookmarksIcon" id="V6w-Ff-I3e">
+                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="3q8-xM-7Vs">

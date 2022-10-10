@@ -81,10 +81,17 @@ extension ListViewModel{
         switch initial {
         case .hotels:
             let hotels: [HotelElement] = listItems as! [HotelElement]
-            return ListEntityGlobalTableViewCell(image: hotels[indexPath.row].image, title: hotels[indexPath.row].name, subTitle: hotels[indexPath.row].price )
+            return ListEntityGlobalTableViewCell(
+                image: hotels[indexPath.row].image,
+                title: hotels[indexPath.row].name,
+                subTitle: hotels[indexPath.row].price,
+                tagName: nil
+            )
         case .flights:
             let flights: [FlightElement] = listItems as! [FlightElement]
-            return ListEntityGlobalTableViewCell(image: flights[indexPath.row].image, title: flights[indexPath.row].flightTitle, subTitle: flights[indexPath.row].flightCompany )
+            return ListEntityGlobalTableViewCell(image: flights[indexPath.row].image, title: flights[indexPath.row].flightTitle, subTitle: flights[indexPath.row].flightCompany,
+                tagName: nil
+            )
         case .bookmarks:
             print("bookmarks")
         case .baseDefatult:
