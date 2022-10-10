@@ -23,7 +23,9 @@ This project is a graduation project given at the end of ```IOS Swift Bootcamp 7
   - ScrollView
   - TabBar
   - Navigation
-
+- Fonts
+  - Source Sans Pro
+  - Montserrat
 ### Packages
 - Swift Package Manager
   - [Alamofire](https://github.com/Alamofire/Alamofire.git)
