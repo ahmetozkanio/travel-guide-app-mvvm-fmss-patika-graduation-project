@@ -7,7 +7,7 @@ This project is a graduation project given at the end of ```IOS Swift Bootcamp 7
 ### APP Movie
 
 <a href="https://www.youtube.com/watch?v=M23T3KFRa8o&t=34s">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" width="22%"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" width="16%"/>
 </a>
 
 
@@ -36,9 +36,6 @@ This project is a graduation project given at the end of ```IOS Swift Bootcamp 7
 
 ### App Launch Screen
 ![](images/app/launch_screen.png)
-
-### Tab Bar
-![](images/app/tab_bar.png)
 
 ### Home
 <p align='center'>
