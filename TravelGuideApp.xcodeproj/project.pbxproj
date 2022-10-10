@@ -792,6 +792,7 @@
 				DEVELOPMENT_TEAM = FPYTGW2S6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelGuideApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Travel Guide";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -821,6 +822,7 @@
 				DEVELOPMENT_TEAM = FPYTGW2S6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelGuideApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Travel Guide";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
