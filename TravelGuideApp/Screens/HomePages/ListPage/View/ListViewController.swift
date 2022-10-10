@@ -7,27 +7,26 @@
 
 import UIKit
 
-
+//Generic ListView....
 class ListViewController: UIViewController {
-
+    
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
     private lazy var listViewModel: ListViewModel = ListViewModel()
     
+    //Since the page is in Generic structure, you can check what information it comes with here.
     var initialComponent = Constant.ListViewControllerInitialComponent.baseDefatult
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         initial()
-     
         listTableViewInitial()
     }
     override func viewWillAppear(_ animated: Bool) {
+        // This function is triggered when List Item is reloaded
         NotificationCenter.default.addObserver(self, selector: #selector(listItemsReload), name: Notification.Name("ListItemReloadData"), object: nil)
     }
-    
     
     @IBAction func backButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -41,24 +40,21 @@ class ListViewController: UIViewController {
         controller.modalTransitionStyle = .coverVertical
         controller.item = item
         self.present(controller, animated: true, completion: nil)
-        
     }
 }
 
 private extension ListViewController{
-  func initial(){
-      
-      titleLabel.text =   listViewModel.initialListModel(initialComponent)
+    func initial(){
+        titleLabel.text = listViewModel.initialListModel(initialComponent)
     }
 }
 private extension ListViewController{
+    //This function is triggered when List Item is reloaded
     @objc func listItemsReload() {
         DispatchQueue.main.async {
-              self.listTableView.reloadData()
+            self.listTableView.reloadData()
         }
     }
-    
-    
 }
 
 private extension ListViewController{
@@ -75,7 +71,6 @@ private extension ListViewController{
 extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
         return listViewModel.getListItemCount()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -87,8 +82,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
             cell.configureCellData(cellData)
             return cell
         }
-            return cell
+        return cell
     }
-
-    
 }

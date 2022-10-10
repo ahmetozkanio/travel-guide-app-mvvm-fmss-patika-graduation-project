@@ -21,20 +21,19 @@ final class HomeViewController: UIViewController {
         
         uiElementDesignInitial()
         articleCollectionViewInitial()
-        
         homeViewModel.delegate = self
         homeViewModel.didViewLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // If the Article Reload request comes with a notification, it will be listened to here
         NotificationCenter.default.addObserver(self, selector: #selector(reloadArticle), name: Notification.Name("reloadArticle"), object: nil)
-      
     }
+    // MARK: - Article Reload
+    //If the Article Reload request comes with a notification, this function is triggered and reloaded.
     @objc func reloadArticle(){
         articleItemsReload()
         articleIndicatorLoading.isHidden = false
-       // self.view.makeToast("This is a piece of toast")
     }
     
     // MARK: - BUTTON CLICK
@@ -44,9 +43,8 @@ final class HomeViewController: UIViewController {
     @IBAction func hotelButtonClicked(_ sender: Any) {
         goToListViewController(Constant.ListViewControllerInitialComponent.hotels)
     }
-    
 }
-
+// MARK: - Route
 extension HomeViewController{
     private func goToListViewController(_ initialComponent: Constant.ListViewControllerInitialComponent){
         let storyboard = UIStoryboard(name: "ListView", bundle: nil)
@@ -63,7 +61,6 @@ extension HomeViewController{
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
         controller.item = DetailEntity(imageView: item?.urlToImage, titleLabel: item?.author, mainTitleLabel: item?.title, descriptionLabel: item?.content)
-      
         self.present(controller, animated: true, completion: nil)
         
     }
@@ -77,7 +74,6 @@ private extension HomeViewController{
         topBgImageView.layer.shadowColor = UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0).cgColor
         topBgImageView.layer.shadowOffset = CGSize(width: 0, height: 16)
         topBgImageView.layer.shadowOpacity = 1.0
-        //topBgImageView.layer.shadowRadius = 10.0
         topBgImageView.layer.masksToBounds = false
         topBgImageView.layer.cornerRadius = 25.0
     }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension HomeViewController{
     func articleCollectionViewInitial(){
         articleCollectionView.delegate = self
@@ -22,9 +21,9 @@ extension HomeViewController{
 extension HomeViewController: HomeViewModelProtocol{
     func articleItemsReload() {
         DispatchQueue.main.async {
-              self.articleCollectionView.reloadData()
+            self.articleCollectionView.reloadData()
             self.articleIndicatorLoading.isHidden = true
-          }
+        }
     }
 }
 
@@ -33,17 +32,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return homeViewModel.getArticleItemCount()
     }
-   
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as? ArticleCollectionViewCell
-        
         if let cellData = homeViewModel.getArticleCellData(indexPath: indexPath) {
             cell?.configureArticleCellData(item: cellData,articleItems: self.homeViewModel.getArticleElementModel() ?? [],index: indexPath)
             return cell!
         }
-        
-  
-            return cell!
+        return cell!
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         goToDetailViewController( homeViewModel.didClickItem(at: indexPath.row) )

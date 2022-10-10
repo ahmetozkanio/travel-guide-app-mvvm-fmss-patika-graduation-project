@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: ArticleCellModel
 struct ArticleCellModel{
     var title: String?
     var mainTitle: String?

@@ -8,9 +8,7 @@
 import UIKit
 
 class BookmarksViewController: UIViewController {
-
     
-
     @IBOutlet weak var bookmarksTableView: UITableView!
     
     private lazy var bookmarksViewModel: BookmarksViewModel = BookmarksViewModel()
@@ -21,6 +19,7 @@ class BookmarksViewController: UIViewController {
         bookmarksViewModel.didViewLoad()
         bookmarksTableViewInitial()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(bookmarksAddAndRemoveData), name: Notification.Name("reloadBookmarksData"), object: nil)
     }
@@ -41,12 +40,14 @@ extension BookmarksViewController{
     }
 }
 extension BookmarksViewController:BookmarksViewModelProtocol {
-   func reloadBookmarks() {
+    func reloadBookmarks() {
         DispatchQueue.main.async {
             self.bookmarksTableView.reloadData()
         }
     }
 }
+
+
 private extension BookmarksViewController{
     private func bookmarksTableViewInitial(){
         bookmarksTableView.delegate = self
@@ -68,13 +69,11 @@ extension BookmarksViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GlobalTableViewCell") as! GlobalTableViewCell
-      
+        
         if let cellData = bookmarksViewModel.getListCellData(indexPath: indexPath) {
             cell.configureCellData(cellData)
             return cell
         }
-            return cell
+        return cell
     }
-
-    
 }

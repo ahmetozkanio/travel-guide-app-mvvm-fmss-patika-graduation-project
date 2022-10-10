@@ -17,24 +17,25 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookmarksButton: UIButton!
     
-    private var situationButton: Bool?
+    private var situationButton: Bool?// Checking the status of the button changes depending on whether the bookmarks are also saved.
     private lazy var homeViewModel: HomeViewModel = HomeViewModel()
     private var articleItems: [ArticleElement]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        viewBgUI()
+        // Here we listen for the button click event
         bookmarksButton.addTarget(self, action: #selector(bookmarksButtonClick(sender:)), for: .touchUpInside)
     }
-    
+    // listen for the button click event here, then we get the clicked index and save our related object
     @objc func bookmarksButtonClick(sender: UIButton){
         let buttonTag = sender.tag
         self.bookmarkButton(buttonTag)
     }
-    @IBAction func addBookmarkButtonClicked(_ sender: Any) {
-    }
+    @IBAction func addBookmarkButtonClicked(_ sender: Any) {}
 }
+
+// Adds or deletes according to the status information when the button is pressed.
 extension ArticleCollectionViewCell{
     func bookmarkButton(_ buttonTag: Int) {
         if let item = articleItems?[buttonTag]{
@@ -61,6 +62,9 @@ extension ArticleCollectionViewCell{
         }
     }
 }
+
+//The bookmark initial button goes and looks at the bookmarks in the database, and the process returns and reports the status, depending on whether we have an article object or not.
+// Accordingly, the status information is refreshed and the button is adjusted accordingly.
 extension ArticleCollectionViewCell{
     func articleViewInitialBookmark(_ item: ArticleElement?){
         self.homeViewModel.bookmarkInitialButton(item) { result in
@@ -68,6 +72,7 @@ extension ArticleCollectionViewCell{
         }
     }
 }
+// Article Cell Bookmarks add/remove button events and setting process
 extension ArticleCollectionViewCell{
     func buttonBookmarksChangeStatus(_ situationBookmark: Bool){
         situationButton = situationBookmark
@@ -78,7 +83,7 @@ extension ArticleCollectionViewCell{
         }
     }
 }
-
+// The Article Cell is configured with the desired data.
 extension ArticleCollectionViewCell{
     func configureArticleCellData(item: ArticleCellModel,articleItems: [ArticleElement],index: IndexPath){
         
@@ -94,11 +99,7 @@ extension ArticleCollectionViewCell{
 
 private extension ArticleCollectionViewCell{
     private func setupUI(){
-        imageViewBglUI()
-    }
-    private func imageViewBglUI(){
-        // imageView.layer.cornerRadius = 8
-        //  imageView.clipsToBounds = true
+        viewBgUI()
     }
     private func viewBgUI(){
         bgroundView.layer.cornerRadius = 8
@@ -110,6 +111,6 @@ private extension ArticleCollectionViewCell{
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-     
+        
     }
 }

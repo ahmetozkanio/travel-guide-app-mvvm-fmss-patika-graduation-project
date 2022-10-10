@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: ListEntity
 struct ListEntityGlobalTableViewCell{
     var topBarTitle: String?
     var image: String?

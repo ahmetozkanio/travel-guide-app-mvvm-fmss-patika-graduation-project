@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: BookmarksEntity
 struct BookmarksEntity{
     let id: UUID?
     let title: String?
